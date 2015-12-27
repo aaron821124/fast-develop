@@ -1,0 +1,71 @@
+<div ng-controller="idCtrl">
+    <b id="word">請輸入身分證後九碼</b>
+    <div id="input">
+        <div id="InputNumber"></div>
+        <!-- 輸入數字螢幕-->
+    </div>
+    <div>
+        <div style="display: inline-block">
+            <div id="tableContainer">
+                <!-- 按鈕 -->
+                <div class="row">
+                    <!-- row1 -->
+                    <div class="button">
+                        <img class="number" id="1" src="img/1.png">
+                    </div>
+                    <div class="button">
+                        <img class="number" id="2" src="img/2.png">
+                    </div>
+                    <div class="button">
+                        <img class="number" id="3" src="img/3.png">
+                    </div>
+                    <div class="button">
+                        <img class="button" id="inputback" src="img/inputback.png">
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- row2 -->
+                    <div class="button">
+                        <img class="number" id="4" src="img/4.png">
+                    </div>
+                    <div class="button">
+                        <img class="number" id="5" src="img/5.png">
+                    </div>
+                    <div class="button">
+                        <img class="number" id="6" src="img/6.png">
+                    </div>
+                    <div class="button">
+                        <img class="button" id="inputclear" src="img/inputclear.png">
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- row3 -->
+                    <div class="button">
+                        <img class="number" id="7" src="img/7.png">
+                    </div>
+                    <div class="button">
+                        <img class="number" id="8" src="img/8.png">
+                    </div>
+                    <div class="button">
+                        <img class="number" id="9" src="img/9.png">
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- row4 -->
+                    <div class="button">
+                        <img src="">
+                    </div>
+                    <div class="button">
+                        <img class="number" id="0" src="img/0.png">
+                    </div>
+                    <div class="button">
+                    </div>
+                    <div class="" >
+                        <img ng-click="next()" class="" id="enter" src="img/enter.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{idCard()}}
+</div>

@@ -1,0 +1,28 @@
+body{ /*背景圖 */
+	background-image: url(../img/tue_backgr.png);
+	background-repeat: no-repeat;
+	font-family: 微軟正黑體;
+	height: 768px;
+	width: 1024px;
+}
+
+div#container{
+	margin-left: 70px;
+	margin-top: 225px;
+	height: 495px;
+	width: 865px;
+}
+
+div#word{
+	font-weight: bold;
+	font-size: 40px;
+	margin-left: 230px;
+	padding-top: 60px;
+}
+
+img#insert{
+	height: 80%;
+	width: 80%;
+	margin-left: 75px;
+	margin-top: -20px;
+}

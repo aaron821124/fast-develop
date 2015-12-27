@@ -1,0 +1,54 @@
+body{ /*背景圖 */
+	background-image: url(../img/tue_backgr.png);
+	background-repeat: no-repeat;
+	font-family: 微軟正黑體;
+	height: 768px;
+	width: 1024px;
+}
+
+div#container{
+	margin-left: 70px;
+	margin-top: 225px;
+	height: 495px;
+	width: 865px;
+}
+
+div#word{
+	font-weight: bold;
+	font-size: 30px;
+	/*text-align: center;&/
+	/*margin-left: 230px;*/
+	padding-top: 100px;
+	padding-left: 250px;
+	margin-top: 100px;
+	line-height: 1.5em;
+}
+
+
+
+img#enter{
+	
+	height: 57px;
+	width: 128px;
+	margin: 50px 0px 0px 400px;
+	
+}
+
+purple{
+	color: purple;
+}
+
+img#print{
+	width: 70px;
+	height: 66px;
+	position: absolute;
+	top: 580px;
+	left: 800px;
+}
+
+img#map{
+	width: 70%;
+	height: 80%;
+	margin: 30px 0px 0px 100px;
+	border: 1px solid grey;
+}

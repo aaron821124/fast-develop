@@ -1,0 +1,17 @@
+<div id="verification-container" layout="column" layout-align="top center" layout-fill>
+    <div style="width: 100%" flex="none" layout="row" layout-align="center center" layout-padding>
+        <h3 flex="none" style="margin: 0">1. 第一階段認證 > 2. 第二階段認證 > 確認資料 > 完成報到</h3>
+        <h3 flex style="margin: 0">{{time | date : 'HH:mm'}}</h3>
+        <md-button style="background-color: #EBA273; margin-right: 10px" flex="15">求助</md-button>
+        <md-button style="background-color: #809B7D" flex="15">離開</md-button>
+
+    </div>
+    <span flex="5"></span>
+    <div flex="none" style="width: 865px" layout="row">
+        <md-button class="tab">身分證</md-button>
+        <md-button class="tab">健保卡</md-button>
+        <md-button class="tab">臉部檢測</md-button>
+
+    </div>
+    <div flex="none" ui-view id="main"></div>
+</div>

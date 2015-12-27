@@ -1,0 +1,30 @@
+#sucess-word{
+	font-weight: bold;
+	font-size: 30px;
+	padding-top: 100px;
+	padding-left: 250px;
+	margin-top: 100px;
+	line-height: 1.2em;
+}
+
+
+
+img#enter{
+	
+	height: 57px;
+	width: 128px;
+	margin: 50px 0px 0px 400px;
+	
+}
+
+purple{
+	color: red;
+}
+
+div#greet{
+	margin: 30px 0px 0px 0px;
+	font-weight: bold;
+	font-size: 30px;
+	color: red;
+	text-align: center;
+}

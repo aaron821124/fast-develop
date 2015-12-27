@@ -1,0 +1,150 @@
+body {
+	width:1024px;
+	height: 768px;
+}
+
+#home {
+	height: 768px;
+	width: 1024px;
+	background-image: url(../img/home-bgr.png);
+}
+
+#home #start {
+	margin: 20px;
+	height: 100%;
+	background: rgba(234,234,234, 0.2);
+	border: dashed 10px;
+	border-radius: 20px
+}
+
+#verification-container {
+	background: rgba(119, 150, 88, 0.5);
+	width: 1024px;
+	height: 768px;
+}
+
+.trapezoid {
+	position: absolute;
+	z-index: 0;
+	border-top: 50px solid red;
+	border-right: 50px solid transparent;
+	height: 0;
+	width: 100px;
+}
+
+.md-button {
+	border: solid 4px #6C6C6C;
+	border-radius: 20px;
+	color: white;
+	font-size: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin: 0;
+}
+
+.tab {
+	background: #EFEEDE;
+	width: 200px;
+	border: solid 4px #6C6C6C;
+	border-bottom: none;
+	border-radius: 5px;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+	color: #6c6c6c;
+	text-align: center;
+}
+
+#main {
+	background: #EFEEDE;
+	height: 495px;
+	width: 865px;
+	border: solid 4px #6C6C6C;
+	border-radius: 20px;
+	text-align: center;
+	border-top-right-radius: 0;
+	border-top-left-radius: 0;
+}
+
+
+div#word{
+	font-weight: bold;
+	font-size: 40px;
+	padding-top: 60px;
+}
+
+img#insert{
+	height: 80%;
+	width: 80%;
+	margin-top: -20px;
+}
+
+div#container{ /*下方*/
+	height: 495px;
+	width: 865px;
+}
+
+div#input{ /*輸入*/
+	position: relative;
+	padding-top: 45px;
+}
+
+b#word{ /*輸入九碼*/
+	font-size: 30px;
+}
+
+div#InputNumber{ /*輸入欄位*/
+	margin-top: -50px;
+	width: 400px;
+	height: 100px;
+	background-image: url(../img/number_input.png);
+	background-repeat: no-repeat;
+	font-size: 60px;
+	font-weight: bold;
+	display: inline-block;
+}
+
+div#tableContainer{/*下方按鈕整體*/
+	display: table;
+}
+
+div.row{ /*下方按鈕一列*/
+	display: table-row;
+}
+
+div.button{ /*下方按鈕個體*/
+	display: table-cell;
+}
+
+img.number{ /*數字按鈕*/
+	width: 80px;
+	height: 80px;
+}
+
+img.button{ /*其他按鈕*/
+	height: 80px;
+	width: 160px;
+}
+
+img#enter{ /*確認*/
+}
+
+#sucess-word{
+	font-weight: bold;
+	font-size: 30px;
+	margin-top: 100px;
+	line-height: 1.2em;
+}
+
+purple{
+	color: red;
+}
+
+
+#greet{
+	margin: 30px 0px 0px 0px;
+	font-weight: bold;
+	font-size: 30px;
+	color: red;
+	text-align: center;
+}
+

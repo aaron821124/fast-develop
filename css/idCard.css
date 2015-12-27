@@ -1,0 +1,63 @@
+body{ /*背景圖 */
+	background-image: url(../img/tue_backgr.png);
+	background-repeat: no-repeat;
+	font-family: 微軟正黑體;
+	height: 768px;
+	width: 1024px;
+}
+
+div#container{ /*下方*/
+	margin-left: 70px;
+	margin-top: 225px;
+	height: 495px;
+	width: 865px;
+}
+
+div#input{ /*輸入*/
+	position: relative;
+	margin-left: 20px;
+	padding-top: 45px;
+}
+
+b#word{ /*輸入九碼*/
+	font-size: 30px;
+}
+
+div#InputNumber{ /*輸入欄位*/
+	margin-top: -50px;
+	margin-left: 280px;
+	width: 400px;
+	height: 100px;
+	background-image: url(../img/number_input.png);
+	background-repeat: no-repeat;
+	font-size: 60px;
+	font-weight: bold;
+}
+
+div#tableContainer{/*下方按鈕整體*/
+	display: table;
+	margin-left: 300px;
+}
+
+div.row{ /*下方按鈕一列*/
+	display: table-row;
+}
+
+div.button{ /*下方按鈕個體*/
+	display: table-cell;
+}
+
+img.number{ /*數字按鈕*/
+	width: 80px;
+	height: 80px;
+}
+
+img.button{ /*其他按鈕*/
+	height: 80px;
+	width: 160px;
+}
+
+img#enter{ /*確認*/
+	margin-left: 630px;
+	margin-top: -150px;
+}
