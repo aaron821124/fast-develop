@@ -23,20 +23,55 @@ body {
 	height: 768px;
 }
 
-.trapezoid {
+.step {
+	font-size: 21px;
+	color: #6C6C6C;
+	height: 50px;
+	margin: 0px 9px;
+	position: relative;
+	padding: 0;
+}
+
+.trapezoid-first {
 	position: absolute;
+	top: 0;
 	z-index: 0;
-	border-top: 50px solid red;
+	border-top: 50px solid #E8DE8B;
 	border-right: 50px solid transparent;
 	height: 0;
-	width: 100px;
+	width: 135px;
+	padding: 0;
+}
+
+.trapezoid {
+	position: absolute;
+	top: 0;
+	z-index: 0;
+	padding: 0;
+	width: 160px;
+	height: 50px;
+	-webkit-transform: skew(-45deg);
+	   -moz-transform: skew(-45deg);
+	     -o-transform: skew(-45deg);
+	background: #E8DE8B;
+}
+
+.trapezoid-last {
+	position: absolute;
+	top: 0;
+	z-index: 0;
+	border-bottom: 50px solid #E8DE8B;
+	border-left: 50px solid transparent;
+	height: 0;
+	width: 135px;
+	padding: 0;
 }
 
 .md-button {
 	border: solid 4px #6C6C6C;
 	border-radius: 20px;
 	color: white;
-	font-size: 30px;
+	font-size: 21px;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	margin: 0;
@@ -148,3 +183,7 @@ purple{
 	text-align: center;
 }
 
+
+.step span {
+	margin: 0px 14px;
+}

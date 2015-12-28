@@ -1,17 +1,38 @@
-<div id="verification-container" layout="column" layout-align="top center" layout-fill>
+<div ng-controller="mainCtrl" id="verification-container" layout="column" layout-align="top center" layout-fill>
     <div style="width: 100%" flex="none" layout="row" layout-align="center center" layout-padding>
-        <h3 flex="none" style="margin: 0">1. 第一階段認證 > 2. 第二階段認證 > 確認資料 > 完成報到</h3>
+        <div layout="column" layout-align="center" class="step">
+            <div class="trapezoid-first"></div>
+            <span flex="none" style="position: relative;z-index: 1;">第一階段認證</span>
+        </div>
+        <div layout="column" layout-align='center' class="step">
+            <div class="trapezoid"></div>
+            <span style="position: relative;z-index: 1;">第二階段認證</span>
+        </div>
+        <div layout="column" layout-align='center' class="step">
+            <div style="width: 120px" class="trapezoid"></div>
+            <span style="position: relative;z-index: 1;">確認資料</span>
+        </div>
+        <div style="margin-left: -14px" layout="column" layout-align='center' class="step">
+            <div style="width: 90px" class="trapezoid-last"></div>
+            <span style="position: relative;z-index: 1;margin-left: 40px">完成報到</span>
+        </div>
+        <span flex="5"></span>
+        <svg style="padding: 0;" id="clock" width="50" height="50">
+            <circle stroke="grey" stroke-width="3" cx="25" cy="25" r="23" fill="none"></circle>
+            <line stroke="grey" stroke-width="3" x1="25" y1="25" x2="{{hx2}}" y2="{{hy2}}"></line>
+            <line stroke="grey" stroke-width="3" x1="25" y1="25" x2="{{mx2}}" y2="{{my2}}"></line>
+        </svg>
         <h3 flex style="margin: 0">{{time | date : 'HH:mm'}}</h3>
-        <md-button style="background-color: #EBA273; margin-right: 10px" flex="15">求助</md-button>
-        <md-button style="background-color: #809B7D" flex="15">離開</md-button>
-
+        <span flex="5"></span>
+        
+        <md-button style="background-color: #EBA273; margin-right: 10px" flex>求助</md-button>
+        <md-button style="background-color: #809B7D" flex>離開</md-button>
     </div>
     <span flex="5"></span>
     <div flex="none" style="width: 865px" layout="row">
         <md-button class="tab">身分證</md-button>
         <md-button class="tab">健保卡</md-button>
         <md-button class="tab">臉部檢測</md-button>
-
     </div>
     <div flex="none" ui-view id="main"></div>
 </div>

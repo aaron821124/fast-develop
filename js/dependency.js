@@ -74,20 +74,7 @@ function getUserData(id, callback) {
 
 var service_url = 'http://insight-kiosk.azurewebsites.net';
 
-function InitWebCam(id) {
-    
-    navigator.webkitGetUserMedia({
-        video: true,
-        audio: false
-    }, function (stream) {
-        var video = document.getElementById(id);
-        video.src = window.URL.createObjectURL(stream);
-        // video.src = stream;
-        video.play();
-    }, function (err) {
-        console.log(err);
-    });
-}
+
 
 function TakePicture(id) {
     var canvas = document.createElement("canvas");
