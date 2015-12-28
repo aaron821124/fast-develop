@@ -16,17 +16,17 @@ angular.module('app')
             drawClock();
         }, 10000);
 
-        function drawClock(){
+        function drawClock() {
             var min = $scope.time.getMinutes();
-            var hour = $scope.time.getHours()%12 + min/60;
+            var hour = $scope.time.getHours() % 12 + min / 60;
             console.log(hour, min);
 
-            var hourAng = hour*30/180*3.1415926;
-            var minAng = min*6/180*3.1415926;
-            $scope.hy2 = 25 - 10*Math.cos(hourAng);
-            $scope.hx2 = 25 + 10*Math.sin(hourAng);
-            $scope.my2 = 25 - 20*Math.cos(minAng);
-            $scope.mx2 = 25 + 20*Math.sin(minAng);
+            var hourAng = hour * 30 / 180 * 3.1415926;
+            var minAng = min * 6 / 180 * 3.1415926;
+            $scope.hy2 = 25 - 10 * Math.cos(hourAng);
+            $scope.hx2 = 25 + 10 * Math.sin(hourAng);
+            $scope.my2 = 25 - 20 * Math.cos(minAng);
+            $scope.mx2 = 25 + 20 * Math.sin(minAng);
             // console.log(hy2, hx2);
         }
     })
@@ -47,11 +47,12 @@ angular.module('app')
             // console.log($state.get('^.face'))
         }
     })
-    .controller('faceCtrl', function($scope, $state) {
+    .controller('faceCtrl', function($scope, $state, $interval) {
         InitWebCam("video");
 
 
         var localStream;
+
         function InitWebCam(id) {
 
             navigator.webkitGetUserMedia({
@@ -67,23 +68,42 @@ angular.module('app')
             });
         }
 
-        $scope.check = function() {
+        function check() {
             var myPic = TakePicture("video");
-            console.log(outcard);
-            CheckFace(outcard.IDNumber, myPic, function(result) {
+            CheckFace('F128720903', myPic, function(result) {
                 if (result) {
-                    alert("辨識成功");
+                    console.log("辨識成功");
+                    $scope.sucess++;
                 } else {
-                    alert("辨識失敗");
+                    console.log("辨識失敗");
+                    $scope.fail++;
                 }
             });
         };
+
+        $scope.sucess = 0;
+        $scope.fail = 0;
+
+        var interval = $interval(function() {
+            check();
+            console.log($scope.sucess);
+            if($scope.sucess == 2){
+                $interval.cancel(interval);
+                setTimeout(function(){
+                    $scope.next();
+                }, 1000)
+            }
+            if($scope.fail == 5){
+                $interval.cancel(interval);
+            }
+        }, 1000)
+
         $scope.next = function() {
             var videoSrc = document.getElementById('video').src;
             document.getElementById('video').src = "";
             console.log(localStream);
             localStream.getVideoTracks()[0].stop();
-            setTimeout(function(){
+            setTimeout(function() {
                 $state.go('verification.id-card');
             }, 5);
         }

@@ -1,20 +1,21 @@
 body {
 	width:1024px;
 	height: 768px;
+	font-family: 儷黑 Pro ,Heiti TC, Source Han Sans;
+	font-weight: 900;
 }
 
 #home {
-	height: 768px;
-	width: 1024px;
+	height: 728px;
+	width: 984px;
 	background-image: url(../img/home-bgr.png);
 }
 
 #home #start {
-	margin: 20px;
 	height: 100%;
 	background: rgba(234,234,234, 0.2);
 	border: dashed 10px;
-	border-radius: 20px
+	border-radius: 20px;
 }
 
 #verification-container {
@@ -72,6 +73,7 @@ body {
 	border-radius: 20px;
 	color: white;
 	font-size: 21px;
+	font-weight: bold;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	margin: 0;
