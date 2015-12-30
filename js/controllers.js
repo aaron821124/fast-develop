@@ -37,13 +37,6 @@ angular.module('app')
     })
     .controller('icCtrl', function($scope, $state) {
         $scope.$parent.$parent.step = 1;
-
-
-        // Birthday: "82/11/24"
-        // CardId: "000001121800"
-        // IDNumber: "F128720903"  
-        // Name: "任精瑋"
-        // Sex: "M"
         console.log($scope.patientInfo);
         console.log('check');
 
@@ -57,10 +50,6 @@ angular.module('app')
 
 
         $scope.next = function() {
-            console.log($scope);
-            if ($scope.patientInfo.IDNumber == null) {
-                $scope.patientInfo.IDNumber = "F128720903"
-            }
             $scope.$parent.$parent.step = 2;
             $state.go('verification.face');
         }
@@ -168,13 +157,36 @@ angular.module('app')
 
         $scope.input = "";
 
-        $scope.clickBtn = function(num){
-            if($scope.input.length == 3 || $scope.input.length == 7){
+        $scope.clickBtn = function(num) {
+            if ($scope.input.length == 3 || $scope.input.length == 7) {
                 $scope.input += '-'
             }
-            if($scope.input.length < 11){
+            if ($scope.input.length < 11) {
                 $scope.input += num;
             }
+
+        }
+
+        $scope.enter = function() {
+            var input = $scope.input;
+            input = input.replace(/-/g, "");
+            for (var i = 0; i < 26; ++i) {
+                var c = String.fromCharCode(65 + i);
+                var number = input;
+                getUserData(c + number, function(result) {
+                    if (result) {
+                        $scope.patientInfo.IDNumber = result.IDNumber;
+                        $scope.next();
+                    }
+                });
+            };
+
+        }
+
+        $scope.back = function() {
+            if ($scope.input.length == 9 || $scope.input.length == 5) {
+                $scope.input = $scope.input.slice(0, $scope.input.length - 2);
+            } else $scope.input = $scope.input.slice(0, $scope.input.length - 1);
 
         }
 

@@ -40,8 +40,15 @@ h1 {
 	margin-right: 30px;
 }
 
-.steps span {
+.steps * {
 	font-size: 28px;
+	color: rgba(0, 0, 0, 0.26);
+	fill: rgba(0, 0, 0, 0.26);
+}
+
+.current-step, .current-step * {
+	color: #000000;
+	fill: #000000;
 }
 
 .trapezoid-first {
@@ -91,7 +98,8 @@ h1 {
 }*/
 
 .md-button {
-	border: solid 2px #4BDAB6;	
+	border: solid 2px;
+	font-size: 21px;	
 }
 
 .circle-btn {
@@ -142,8 +150,8 @@ img#insert{
 }
 
 div#container{ /*下方*/
-	height: 495px;
-	width: 865px;
+	height: 100%;
+	width: 100%;
 }
 
 div#input{ /*輸入*/

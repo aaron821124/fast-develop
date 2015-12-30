@@ -21,13 +21,13 @@
     </div>
     <div style="width: 865px;position: relative; top: 10px" flex="none" layout="row" layout-align="left center">
         <div class="steps">
-            <span style="">第一階段認證<ng-md-icon icon="play_arrow"></ng-md-icon></span>
-            <span style="">第二階段認證<ng-md-icon icon="play_arrow"></ng-md-icon></span>
-            <span style="">確認資料<ng-md-icon icon="play_arrow"></ng-md-icon></span>
-            <span style="">完成報到</span>
+            <span ng-class="{'current-step': step == 1}" style="">第一階段認證<ng-md-icon icon="play_arrow"></ng-md-icon></span>
+            <span ng-class="{'current-step': step == 2}" style="">第二階段認證<ng-md-icon icon="play_arrow"></ng-md-icon></span>
+            <span ng-class="{'current-step': step == 3}" style="">確認資料<ng-md-icon icon="play_arrow"></ng-md-icon></span>
+            <span ng-class="{'current-step': step == 4}" style="">完成報到</span>
         </div>
-        <md-button class="circle-btn md-fab">求助</md-button>
-        <md-button class="circle-btn md-fab" ui-sref="home"><span>離開</span></md-button>
+        <md-button class="circle-btn md-fab" style="border-color: black;">求助</md-button>
+        <md-button class="circle-btn md-fab" style="border-color: black;" ui-sref="home"><span>離開</span></md-button>
     </div>
     <span flex="5"></span>
     <div flex="none" layout="column" ui-view id="main"></div>
