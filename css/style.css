@@ -1,8 +1,14 @@
-body {
-	width:1024px;
+html, body {
+	width: 1024px;
 	height: 768px;
+	/*overflow: hidden;*/
+	color: #4A4A4A !important;
 	font-family: 儷黑 Pro ,Heiti TC, Source Han Sans;
 	font-weight: 900;
+}
+
+h1 {
+	font-size: 36px
 }
 
 #home {
@@ -19,18 +25,23 @@ body {
 }
 
 #verification-container {
-	background: rgba(119, 150, 88, 0.5);
+	/*background: rgba(119, 150, 88, 0.5);*/
 	width: 1024px;
 	height: 768px;
 }
 
-.step {
-	font-size: 21px;
-	color: #6C6C6C;
-	height: 50px;
-	margin: 0px 9px;
-	position: relative;
-	padding: 0;
+#clock {
+	position: absolute;
+	top: 100px;
+	left: 825px;
+}
+
+.steps {
+	margin-right: 30px;
+}
+
+.steps span {
+	font-size: 28px;
 }
 
 .trapezoid-first {
@@ -67,7 +78,7 @@ body {
 	width: 135px;
 	padding: 0;
 }
-
+/*
 .md-button {
 	border: solid 4px #6C6C6C;
 	border-radius: 20px;
@@ -77,36 +88,51 @@ body {
 	padding-top: 10px;
 	padding-bottom: 10px;
 	margin: 0;
+}*/
+
+.md-button {
+	border: solid 2px #4BDAB6;	
+}
+
+.circle-btn {
+	width: 72px !important;
+	height: 72px !important;
+	border-radius: 50%;
+	border: solid 2px #4BDAB6;
+	padding: 0;
+	min-width: 0px;
+	margin: 0 10px;
+	background-color: #FFFFFF !important;
+	color: black !important;
+	padding: 6px !important;
 }
 
 .tab {
-	background: #EFEEDE;
-	width: 200px;
-	border: solid 4px #6C6C6C;
-	border-bottom: none;
-	border-radius: 5px;
-	border-bottom-right-radius: 0;
-	border-bottom-left-radius: 0;
 	color: #6c6c6c;
 	text-align: center;
+	height: 68px;
+	font-size: 36px;
+	padding: 15px;
+}
+
+.tab span{
+	margin: auto;
 }
 
 #main {
-	background: #EFEEDE;
+	/*background: #EFEEDE;*/
 	height: 495px;
 	width: 865px;
-	border: solid 4px #6C6C6C;
-	border-radius: 20px;
-	text-align: center;
-	border-top-right-radius: 0;
-	border-top-left-radius: 0;
+	/*border: solid 1px;*/
+	border-bottom: solid 4px #D8D8D8;
+	padding: 0 10px;
 }
 
 
 div#word{
 	font-weight: bold;
 	font-size: 40px;
-	padding-top: 60px;
+	/*padding-top: 60px;*/
 }
 
 img#insert{
@@ -122,7 +148,15 @@ div#container{ /*下方*/
 
 div#input{ /*輸入*/
 	position: relative;
-	padding-top: 45px;
+	width: 276px;
+}
+
+#input label{
+	font-size: 28px
+}
+
+#input input {
+	text-align: center;
 }
 
 b#word{ /*輸入九碼*/

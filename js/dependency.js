@@ -116,6 +116,7 @@ function CheckFace(id, pic, cb) {
 
 var inserted_cb = null;
 function ICCardInserted(cb) {
+    console.log(cb);
     inserted_cb = cb;
 }
 

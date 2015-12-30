@@ -34,7 +34,7 @@ function idCard() {
         if (number.length >= 10) {
             number = number.slice(0, number.length - 1);
         };
-        document.getElementById('InputNumber').innerHTML = number.toString().replace(/,/g, '');
+        document.getElementById('InputNumber').value = number.toString().replace(/,/g, '');
     };
 
     /*退一位*/
@@ -44,7 +44,7 @@ function idCard() {
     function Back() {
         var newNumber = number.slice(0, number.length - 1);
         number = newNumber;
-        document.getElementById('InputNumber').innerHTML = number.toString().replace(/,/g, '');
+        document.getElementById('InputNumber').value = number.toString().replace(/,/g, '');
         console.log("bbb");
     }
 
@@ -55,6 +55,6 @@ function idCard() {
     function Clear() {
         var NoneNumber = number.slice(0, 0);
         number = NoneNumber;
-        document.getElementById('InputNumber').innerHTML = number.toString().replace(/,/g, '');
+        document.getElementById('InputNumber').value = number.toString().replace(/,/g, '');
     }
 }

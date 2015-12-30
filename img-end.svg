@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="72px" height="72px" viewBox="0 0 72 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
+    <title>exit</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#76C8CC" offset="0%"></stop>
+            <stop stop-color="#C6E8DB" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="success-2" sketch:type="MSArtboardGroup" transform="translate(-855.000000, -463.000000)">
+            <g id="exit" sketch:type="MSLayerGroup" transform="translate(856.000000, 464.000000)">
+                <circle id="Oval-61" stroke="#979797" sketch:type="MSShapeGroup" cx="35" cy="35" r="35"></circle>
+                <circle id="Oval-61" stroke="#50E3C2" fill="url(#linearGradient-1)" sketch:type="MSShapeGroup" cx="35" cy="35" r="35"></circle>
+                <text id="結束" sketch:type="MSTextLayer" font-family="Heiti TC" font-size="28" font-weight="260" letter-spacing="1.29999995" fill="#FFFFFF">
+                    <tspan x="8" y="49">結束</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

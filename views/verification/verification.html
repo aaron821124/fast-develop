@@ -1,39 +1,52 @@
 <div ng-controller="mainCtrl" id="verification-container" layout="column" layout-align="top center" layout-fill>
-    <span style="height: 15px"></span>
-    <div style="width: 100%" flex="none" layout="row" layout-align="center center" layout-padding>
-        <div layout="column" layout-align="center" class="step">
-            <div class="trapezoid-first"></div>
-            <span flex="none" style="position: relative;z-index: 1;">第一階段認證</span>
-        </div>
-        <div layout="column" layout-align='center' class="step">
-            <div class="trapezoid"></div>
-            <span style="position: relative;z-index: 1;">第二階段認證</span>
-        </div>
-        <div layout="column" layout-align='center' class="step">
-            <div style="width: 120px" class="trapezoid"></div>
-            <span style="position: relative;z-index: 1;">確認資料</span>
-        </div>
-        <div style="margin-left: -14px" layout="column" layout-align='center' class="step">
-            <div style="width: 90px" class="trapezoid-last"></div>
-            <span style="position: relative;z-index: 1;margin-left: 40px">完成報到</span>
-        </div>
-        <span flex="5"></span>
-        <svg style="padding: 0;" id="clock" width="50" height="50">
-            <circle stroke="grey" stroke-width="3" cx="25" cy="25" r="23" fill="none"></circle>
-            <line stroke="grey" stroke-width="3" x1="25" y1="25" x2="{{hx2}}" y2="{{hy2}}"></line>
-            <line stroke="grey" stroke-width="3" x1="25" y1="25" x2="{{mx2}}" y2="{{my2}}"></line>
+    <div id="clock" layout='row' layout-align="center center">
+        <svg style="padding: 0;" width="55" height="55">
+            <filter id="drop-shadow" width="150%" height="150%">
+                <feGaussianBlur in="SourceAlpha" stdDeviation="2" />
+                <feOffset dx="2" dy="2" result="offsetblur" />
+                <feFlood flood-color="#000000" />
+                <feComposite in2="offsetblur" operator="in" />
+                <feMerge>
+                    <feMergeNode/>
+                    <feMergeNode in="SourceGraphic" />
+                </feMerge>
+            </filter>
+            <g filter="url(#drop-shadow)">
+                <circle stroke="grey" stroke-width="3" cx="25" cy="25" r="23" fill="none"></circle>
+                <line stroke="grey" stroke-width="3" x1="25" y1="25" x2="{{hx2}}" y2="{{hy2}}"></line>
+                <line stroke="grey" stroke-width="3" x1="25" y1="25" x2="{{mx2}}" y2="{{my2}}"></line>
+            </g>
         </svg>
-        <h3 flex style="margin: 0">{{time | date : 'HH:mm'}}</h3>
-        <span flex="5"></span>
-
-        <md-button style="background-color: #EBA273; margin-right: 10px" flex>求助</md-button>
-        <md-button style="background-color: #809B7D" flex>離開</md-button>
+        <h3 style="margin: 0">{{time | date : 'HH:mm'}}</h3>
+    </div>
+    <div style="width: 865px;position: relative; top: 10px" flex="none" layout="row" layout-align="left center">
+        <div class="steps">
+            <span style="">第一階段認證<ng-md-icon icon="play_arrow"></ng-md-icon></span>
+            <span style="">第二階段認證<ng-md-icon icon="play_arrow"></ng-md-icon></span>
+            <span style="">確認資料<ng-md-icon icon="play_arrow"></ng-md-icon></span>
+            <span style="">完成報到</span>
+        </div>
+        <md-button class="circle-btn md-fab">求助</md-button>
+        <md-button class="circle-btn md-fab" ui-sref="home"><span>離開</span></md-button>
     </div>
     <span flex="5"></span>
+    <div flex="none" layout="column" ui-view id="main"></div>
     <div flex="none" style="width: 865px" layout="row">
-        <md-button class="tab">身分證</md-button>
-        <md-button class="tab">健保卡</md-button>
-        <md-button class="tab">臉部檢測</md-button>
+        <div flex ng-show="step == 1" layout="row" layout-align="center center">
+            <md-button flex class="md-raised tab" ui-sref="verification.ic-card">健保卡</md-button>
+            <md-button flex class="md-raised tab" ui-sref="verification.id-card">身分證</md-button>
+        </div>
+        <div flex ng-show="step == 2" layout="row">
+            <md-button flex class="tab" ui-sref="verification.face">臉部檢測</md-button>
+            <md-button flex class="tab" ui-sref="verification.finger-print">指紋辨識</md-button>
+        </div>
+        <div flex ng-show="step == 3" layout="row">
+            <md-button flex class="tab">確認資訊</md-button>
+        </div>
+        <div flex ng-show="step == 4" layout="row">
+            <md-button flex class="tab" ui-sref="verification.sucess-info">看診資訊</md-button>
+            <md-button flex class="tab" ui-sref="verification.sucess-place">診間位置</md-button>
+        </div>
     </div>
-    <div flex="none" ui-view id="main"></div>
+    <img src="img/down.svg">
 </div>

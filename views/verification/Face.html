@@ -1,6 +1,15 @@
-<div ng-controller="faceCtrl" ng-click="next()">
-    <div id="word">請對準攝影機進行認證</div>
-    <video id="video" width="320" height="240"></video>
-    </br>
-    <img src="img/enter.png" onclick="Check()">
+<div ng-controller="faceCtrl">
+    <div ng-show="!checkFail" style="height: 100%" layout="column" layout-align="center center">
+        <div layout="row" layout-align="center center" flex="none">
+            <h1>請對準攝影機進行認證</h1>
+            <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+        </div>
+        <video id="video" width="480" height="360"></video>
+    </div>
+    <br/>
+    <div ng-show="checkFail">
+        辨識失敗
+        <md-button style="background-color: #EBA273" ng-click="startCheck()">重新辨識？</md-button>
+        或選擇指紋辨識
+    </div>
 </div>

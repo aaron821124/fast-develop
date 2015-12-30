@@ -1,71 +1,18 @@
-<div ng-controller="idCtrl">
-    <b id="word">請輸入身分證後九碼</b>
-    <div id="input">
-        <div id="InputNumber"></div>
+<div ng-controller="idCtrl" style="height: 100%" layout="column" layout-align="start center">
+    <div style="padding: 5px"></div>
+    <div id="input" flex="15">
+        <md-input-container  class="md-block">
+            <label>請輸入身分證後九碼</label>
+            <input ng-model="input" style="height: 50px; font-size: 28px">
+        </md-input-container>
         <!-- 輸入數字螢幕-->
     </div>
-    <div>
-        <div style="display: inline-block">
-            <div id="tableContainer">
-                <!-- 按鈕 -->
-                <div class="row">
-                    <!-- row1 -->
-                    <div class="button">
-                        <img class="number" id="1" src="img/1.png">
-                    </div>
-                    <div class="button">
-                        <img class="number" id="2" src="img/2.png">
-                    </div>
-                    <div class="button">
-                        <img class="number" id="3" src="img/3.png">
-                    </div>
-                    <div class="button">
-                        <img class="button" id="inputback" src="img/inputback.png">
-                    </div>
-                </div>
-                <div class="row">
-                    <!-- row2 -->
-                    <div class="button">
-                        <img class="number" id="4" src="img/4.png">
-                    </div>
-                    <div class="button">
-                        <img class="number" id="5" src="img/5.png">
-                    </div>
-                    <div class="button">
-                        <img class="number" id="6" src="img/6.png">
-                    </div>
-                    <div class="button">
-                        <img class="button" id="inputclear" src="img/inputclear.png">
-                    </div>
-                </div>
-                <div class="row">
-                    <!-- row3 -->
-                    <div class="button">
-                        <img class="number" id="7" src="img/7.png">
-                    </div>
-                    <div class="button">
-                        <img class="number" id="8" src="img/8.png">
-                    </div>
-                    <div class="button">
-                        <img class="number" id="9" src="img/9.png">
-                    </div>
-                </div>
-                <div class="row">
-                    <!-- row4 -->
-                    <div class="button">
-                        <img src="">
-                    </div>
-                    <div class="button">
-                        <img class="number" id="0" src="img/0.png">
-                    </div>
-                    <div class="button">
-                    </div>
-                    <div class="button" >
-                        <img ng-click="next()" class="button" id="enter" src="img/enter.png">
-                    </div>
-                </div>
-            </div>
-        </div>
+    <span flex="5"></span>
+    <div style='margin: 5px 0' flex="none" ng-repeat="row in [0, 1, 2]">
+        <md-button ng-click="clickBtn(num)" class="md-fab circle-btn" ng-repeat="num in [row*3+1, row*3+2, row*3+3]">{{num}}</md-button>
     </div>
-    {{idCard()}}
+    <div style="width: 276px" flex="none" layout='row' layout-align="end">
+        <md-button class="md-fab circle-btn" flex="none">0</md-button>
+        <md-button class="md-fab circle-btn" flex="none">enter</md-button>
+    </div>
 </div>

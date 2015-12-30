@@ -1,4 +1,4 @@
-angular.module('app', ['ngMaterial', 'ui.router', 'uiRouterStyles'])
+angular.module('app', ['ngMaterial', 'ui.router', 'uiRouterStyles', 'ngMdIcons'])
     .run(['$state', '$stateParams',
         function($state, $stateParams) {
             //this solves page refresh and getting back to state
@@ -60,7 +60,7 @@ angular.module('app', ['ngMaterial', 'ui.router', 'uiRouterStyles'])
 
         .state('verification.sucess-place', {
             url: "/sucess-place",
-            templateUrl: "views/sucess_place.html"
+            templateUrl: "views/verification/sucess_place.html"
         })
     });
     
