@@ -153,12 +153,13 @@ angular.module('app')
             }, 5);
         }
     })
-    .controller('idCtrl', function($scope, $state) {
+    .controller('idCtrl', function($scope, $state, $timeout) {
         $scope.$parent.$parent.step = 1;
 
         $scope.input = "";
 
         $scope.clickBtn = function(num) {
+            $scope.errorMessage = "";
             if ($scope.input.length == 3 || $scope.input.length == 7) {
                 $scope.input += '-'
             }
@@ -168,16 +169,20 @@ angular.module('app')
 
         }
 
+        $scope.errorMessage = "";
+
         $scope.enter = function() {
-            // if($scope.input.length < 11){
-            //     $scope.inputForm.input.$error.minlength = true;
-            // }
-            // else {
-            //     $scope.inputForm.input.$error.minlength = false;
-            // }
-            console.log($scope.inputForm.input.$error);
+            console.log($scope.input.length)
+            if ($scope.input.length < 11) {
+                $scope.errorMessage = "輸入未滿九碼，請輸入九碼數字";
+                return;
+            }
+
+            console.log($scope.errorMessage);
             var input = $scope.input;
             input = input.replace(/-/g, "");
+            $scope.search = true;
+            console.log($scope.search);
             for (var i = 0; i < 26; ++i) {
                 var c = String.fromCharCode(65 + i);
                 var number = input;
@@ -188,9 +193,14 @@ angular.module('app')
                     }
                 });
             };
+            $timeout(function() {
+                $scope.errorMessage = "查無號碼，請確認號碼是否正確";
+                $scope.search = false;
+            }, 5000);
         }
 
         $scope.back = function() {
+            $scope.errorMessage = "";
             if ($scope.input.length == 9 || $scope.input.length == 5) {
                 $scope.input = $scope.input.slice(0, $scope.input.length - 2);
             } else $scope.input = $scope.input.slice(0, $scope.input.length - 1);

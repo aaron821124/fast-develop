@@ -1,18 +1,19 @@
-<div ng-controller="idCtrl" style="height: 100%" layout="column" layout-align="start center">
+<div ng-controller="idCtrl" style="height: 100%;position: relative;" layout="column" layout-align="start center">
     <div style="padding: 5px"></div>
     <div id="input" flex="15">
-        <form name="inputForm">
+        <form name="inputForm" style="">
             <md-input-container class="md-block">
                 <label>請輸入身分證後九碼</label>
                 <input name="input" md-minlength="11" ng-model="input" style="height: 50px; font-size: 28px">
-                <div ng-messages="inputForm.input.$error">
-                    <div ng-message="md-minlength">
+                <!-- <div ng-messages="inputForm.input.$error">
+                    <div ng-message="message">
                         請輸入九個號碼
                     </div>
-                </div>
-                <!-- <div ng-show="inputForm.input.$error.minlength">
-                    請輸入九個號碼
                 </div> -->
+                <div style="color: rgb(221,44,0);" ng-show="errorMessage.length != 0">
+                    {{errorMessage}}
+                </div>
+                <div ng-show="search" style=""><md-progress-circular md-mode="indeterminate"></md-progress-circular></div>
             </md-input-container>
             <!-- 輸入數字螢幕-->
         </form>
