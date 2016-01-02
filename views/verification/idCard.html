@@ -1,11 +1,21 @@
 <div ng-controller="idCtrl" style="height: 100%" layout="column" layout-align="start center">
     <div style="padding: 5px"></div>
     <div id="input" flex="15">
-        <md-input-container  class="md-block">
-            <label>請輸入身分證後九碼</label>
-            <input ng-model="input" style="height: 50px; font-size: 28px">
-        </md-input-container>
-        <!-- 輸入數字螢幕-->
+        <form name="inputForm">
+            <md-input-container class="md-block">
+                <label>請輸入身分證後九碼</label>
+                <input name="input" md-minlength="11" ng-model="input" style="height: 50px; font-size: 28px">
+                <div ng-messages="inputForm.input.$error">
+                    <div ng-message="md-minlength">
+                        請輸入九個號碼
+                    </div>
+                </div>
+                <!-- <div ng-show="inputForm.input.$error.minlength">
+                    請輸入九個號碼
+                </div> -->
+            </md-input-container>
+            <!-- 輸入數字螢幕-->
+        </form>
     </div>
     <span flex="5"></span>
     <div style='margin: 5px 0' flex="none" ng-repeat="row in [0, 1, 2]">

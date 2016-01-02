@@ -1,90 +1,94 @@
-html, body {
-	width: 1024px;
-	height: 768px;
-	/*overflow: hidden;*/
-	color: #4A4A4A !important;
-	font-family: 儷黑 Pro ,Heiti TC, Source Han Sans;
-	font-weight: 900;
+html,
+body {
+    width: 1024px;
+    height: 768px;
+    /*overflow: hidden;*/
+    color: #4A4A4A !important;
+    font-family: 儷黑 Pro, Heiti TC, Source Han Sans, 微軟正黑體;
+    font-weight: bold;
 }
 
 h1 {
-	font-size: 36px
+    font-size: 36px
 }
 
 #home {
-	height: 728px;
-	width: 984px;
-	background-image: url(../img/home-bgr.png);
+    height: 728px;
+    width: 984px;
+    background-image: url(../img/home-bgr.png);
 }
 
 #home #start {
-	height: 100%;
-	background: rgba(234,234,234, 0.2);
-	border: dashed 10px;
-	border-radius: 20px;
+    height: 100%;
+    background: rgba(234, 234, 234, 0.2);
+    border: dashed 10px;
+    border-radius: 20px;
 }
 
 #verification-container {
-	/*background: rgba(119, 150, 88, 0.5);*/
-	width: 1024px;
-	height: 768px;
+    /*background: rgba(119, 150, 88, 0.5);*/
+    width: 1024px;
+    height: 768px;
 }
 
 #clock {
-	position: absolute;
-	top: 100px;
-	left: 825px;
+    position: absolute;
+    top: 154px;
+    left: 825px;
 }
 
 .steps {
-	margin-right: 30px;
+    margin-right: 30px;
 }
 
 .steps * {
-	font-size: 28px;
-	color: rgba(0, 0, 0, 0.26);
-	fill: rgba(0, 0, 0, 0.26);
+    font-size: 28px;
+    color: rgba(0, 0, 0, 0.26);
+    fill: rgba(0, 0, 0, 0.26);
 }
 
-.current-step, .current-step * {
-	color: #000000;
-	fill: #000000;
+.current-step,
+.current-step * {
+    color: #000000;
+    fill: #000000;
 }
 
 .trapezoid-first {
-	position: absolute;
-	top: 0;
-	z-index: 0;
-	border-top: 50px solid #E8DE8B;
-	border-right: 50px solid transparent;
-	height: 0;
-	width: 135px;
-	padding: 0;
+    position: absolute;
+    top: 0;
+    z-index: 0;
+    border-top: 50px solid #E8DE8B;
+    border-right: 50px solid transparent;
+    height: 0;
+    width: 135px;
+    padding: 0;
 }
 
 .trapezoid {
-	position: absolute;
-	top: 0;
-	z-index: 0;
-	padding: 0;
-	width: 160px;
-	height: 50px;
-	-webkit-transform: skew(-45deg);
-	   -moz-transform: skew(-45deg);
-	     -o-transform: skew(-45deg);
-	background: #E8DE8B;
+    position: absolute;
+    top: 0;
+    z-index: 0;
+    padding: 0;
+    width: 160px;
+    height: 50px;
+    -webkit-transform: skew(-45deg);
+    -moz-transform: skew(-45deg);
+    -o-transform: skew(-45deg);
+    background: #E8DE8B;
 }
 
 .trapezoid-last {
-	position: absolute;
-	top: 0;
-	z-index: 0;
-	border-bottom: 50px solid #E8DE8B;
-	border-left: 50px solid transparent;
-	height: 0;
-	width: 135px;
-	padding: 0;
+    position: absolute;
+    top: 0;
+    z-index: 0;
+    border-bottom: 50px solid #E8DE8B;
+    border-left: 50px solid transparent;
+    height: 0;
+    width: 135px;
+    padding: 0;
 }
+
+
 /*
 .md-button {
 	border: solid 4px #6C6C6C;
@@ -97,137 +101,155 @@ h1 {
 	margin: 0;
 }*/
 
+
+/*green #6EBBC3*/
+
+
+/*yellow #F7FFE5*/
+
 .md-button {
-	border: solid 2px;
-	font-size: 21px;	
+    border: solid 2px;
+    font-size: 21px;
+}
+
+.md-button:active {
+    background: linear-gradient(#6EBBC3, #F7FFE5);
+    color: white !important;
 }
 
 .circle-btn {
-	width: 72px !important;
-	height: 72px !important;
-	border-radius: 50%;
-	border: solid 2px #4BDAB6;
-	padding: 0;
-	min-width: 0px;
-	margin: 0 10px;
-	background-color: #FFFFFF !important;
-	color: black !important;
-	padding: 6px !important;
+    width: 72px !important;
+    height: 72px !important;
+    border-radius: 50%;
+    border: solid 2px #4BDAB6;
+    padding: 0;
+    min-width: 0px;
+    margin: 0 10px;
+    background-color: #FFFFFF !important;
+    color: black !important;
+    padding: 6px !important;
 }
 
 .tab {
-	color: #6c6c6c;
-	text-align: center;
-	height: 68px;
-	font-size: 36px;
-	padding: 15px;
+    color: #6c6c6c;
+    text-align: center;
+    height: 68px;
+    font-size: 36px;
+    padding: 15px;
 }
 
-.tab span{
-	margin: auto;
+.tab span {
+    margin: auto;
 }
 
 #main {
-	/*background: #EFEEDE;*/
-	height: 495px;
-	width: 865px;
-	/*border: solid 1px;*/
-	border-bottom: solid 4px #D8D8D8;
-	padding: 0 10px;
+    /*background: #EFEEDE;*/
+    height: 495px;
+    width: 865px;
+    /*border: solid 1px;*/
+    border-bottom: solid 4px #D8D8D8;
+    padding: 0 10px;
 }
 
-
-div#word{
-	font-weight: bold;
-	font-size: 40px;
-	/*padding-top: 60px;*/
+div#word {
+    font-weight: bold;
+    font-size: 40px;
+    /*padding-top: 60px;*/
 }
 
-img#insert{
-	height: 80%;
-	width: 80%;
-	margin-top: -20px;
+img#insert {
+    height: 80%;
+    width: 80%;
+    margin-top: -20px;
 }
 
-div#container{ /*下方*/
-	height: 100%;
-	width: 100%;
+div#container {
+    /*下方*/
+    height: 100%;
+    width: 100%;
 }
 
-div#input{ /*輸入*/
-	position: relative;
-	width: 276px;
+div#input {
+    /*輸入*/
+    position: relative;
+    width: 276px;
 }
 
-#input label{
-	font-size: 28px
+#input label {
+    font-size: 28px
 }
 
 #input input {
-	text-align: center;
+    text-align: center;
 }
 
-b#word{ /*輸入九碼*/
-	font-size: 30px;
+b#word {
+    /*輸入九碼*/
+    font-size: 30px;
 }
 
-div#InputNumber{ /*輸入欄位*/
-	margin-top: -50px;
-	width: 400px;
-	height: 100px;
-	background-image: url(../img/number_input.png);
-	background-repeat: no-repeat;
-	font-size: 60px;
-	font-weight: bold;
-	display: inline-block;
+div#InputNumber {
+    /*輸入欄位*/
+    margin-top: -50px;
+    width: 400px;
+    height: 100px;
+    background-image: url(../img/number_input.png);
+    background-repeat: no-repeat;
+    font-size: 60px;
+    font-weight: bold;
+    display: inline-block;
 }
 
-div#tableContainer{/*下方按鈕整體*/
-	display: table;
+div#tableContainer {
+    /*下方按鈕整體*/
+    display: table;
 }
 
-div.row{ /*下方按鈕一列*/
-	display: table-row;
+div.row {
+    /*下方按鈕一列*/
+    display: table-row;
 }
 
-div.button{ /*下方按鈕個體*/
-	display: table-cell;
+div.button {
+    /*下方按鈕個體*/
+    display: table-cell;
 }
 
-img.number{ /*數字按鈕*/
-	width: 80px;
-	height: 80px;
+img.number {
+    /*數字按鈕*/
+    width: 80px;
+    height: 80px;
 }
 
-img.button{ /*其他按鈕*/
-	height: 80px;
-	width: 160px;
+img.button {
+    /*其他按鈕*/
+    height: 80px;
+    width: 160px;
 }
 
-img#enter{ /*確認*/
+img#enter {
+    /*確認*/
 }
 
-#sucess-word{
-	font-weight: bold;
-	font-size: 30px;
-	margin-top: 100px;
-	line-height: 1.2em;
+#sucess-word {
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 100px;
+    line-height: 1.2em;
 }
 
-purple{
-	color: red;
+purple {
+    color: red;
 }
 
-
-#greet{
-	margin: 30px 0px 0px 0px;
-	font-weight: bold;
-	font-size: 30px;
-	color: red;
-	text-align: center;
+#greet {
+    margin: 30px 0px 0px 0px;
+    font-weight: bold;
+    font-size: 30px;
+    color: red;
+    text-align: center;
 }
-
 
 .step span {
-	margin: 0px 14px;
+    margin: 0px 14px;
 }

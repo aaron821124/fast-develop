@@ -37,6 +37,7 @@ angular.module('app')
     })
     .controller('icCtrl', function($scope, $state) {
         $scope.$parent.$parent.step = 1;
+
         console.log($scope.patientInfo);
         console.log('check');
 
@@ -168,6 +169,13 @@ angular.module('app')
         }
 
         $scope.enter = function() {
+            // if($scope.input.length < 11){
+            //     $scope.inputForm.input.$error.minlength = true;
+            // }
+            // else {
+            //     $scope.inputForm.input.$error.minlength = false;
+            // }
+            console.log($scope.inputForm.input.$error);
             var input = $scope.input;
             input = input.replace(/-/g, "");
             for (var i = 0; i < 26; ++i) {
@@ -180,7 +188,6 @@ angular.module('app')
                     }
                 });
             };
-
         }
 
         $scope.back = function() {

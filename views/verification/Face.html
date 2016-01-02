@@ -1,4 +1,4 @@
-<div ng-controller="faceCtrl">
+<div ng-controller="faceCtrl" style="height: 100%">
     <div ng-show="!checkFail" style="height: 100%" layout="column" layout-align="center center">
         <div layout="row" layout-align="center center" flex="none">
             <h1>請對準攝影機進行認證</h1>
@@ -7,9 +7,12 @@
         <video id="video" width="480" height="360"></video>
     </div>
     <br/>
-    <div ng-show="checkFail">
-        辨識失敗
-        <md-button style="background-color: #EBA273" ng-click="startCheck()">重新辨識？</md-button>
-        或選擇指紋辨識
+    <div ng-show="checkFail" style="height: 100%" layout="column" layout-align="center center">
+        <div layout="row" layout-align="center center">
+            辨識失敗
+            <md-button style="" ng-click="startCheck()">重新辨識？</md-button>
+            或選擇
+            <md-button ui-sref="verification.finger-print">指紋辨識</md-button>
+        </div>
     </div>
 </div>
