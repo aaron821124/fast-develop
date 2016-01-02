@@ -12,18 +12,69 @@ h1 {
     font-size: 36px
 }
 
-#init.ng-enter {
+/*#init.ng-enter {
     position: absolute;
-    /*transition: 2s all;*/
-    animation-duration: 1s;
+    animation-delay: 1.9s;
+    animation-duration: 2.5s;
     animation-name: fadeIn;
+}*/
+
+@keyframes appear{
+    0% {
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 
-/*#init.ng-enter#top-img {
-    position: absolute;
-    top: 384px;
-}*/
+#init>div>div {
+    animation: appear 2s;
+}
+
+@keyframes midToUp {
+    0% {
+        position: relative;
+        top: 330px;
+    }
+    25% {
+        position: relative;
+        top: 330px;
+    }
+    100% {
+        position: relative;
+        top: 0px;
+    }
+}
+
+@keyframes midToBottom {
+    0% {
+        position: relative;
+        bottom: 330px;
+    }
+    25% {
+        position: relative;
+        bottom: 330px;
+    }
+    100% {
+        position: relative;
+        bottom: 0px;
+    }
+}
+
+#top-img {
+    opacity: 1;
+    animation: midToUp 1.5s;
+}
+
+#down-img{
+    opacity: 1;
+    animation: midToBottom 1.5s;
+}
 
 #home {
     height: 728px;
