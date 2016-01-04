@@ -33,7 +33,7 @@ h1 {
 
 
 #init>div>div {
-    animation: appear 2s;
+    animation: appear 2.5s;
 }
 
 @keyframes midToUp {
@@ -67,13 +67,11 @@ h1 {
 }
 
 #top-img {
-    opacity: 1;
-    animation: midToUp 1.5s;
+    animation: midToUp 2s;
 }
 
 #down-img{
-    opacity: 1;
-    animation: midToBottom 1.5s;
+    animation: midToBottom 2s;
 }
 
 #home {
@@ -106,7 +104,7 @@ h1 {
 }
 
 .steps * {
-    font-size: 28px;
+    font-size: 27px;
     color: rgba(0, 0, 0, 0.26);
     fill: rgba(0, 0, 0, 0.26);
 }
@@ -172,16 +170,22 @@ h1 {
 /*yellow #F7FFE5*/
 
 .md-button {
-    border: solid 2px;
-    font-size: 21px;
+    /*border: solid 2px;*/
+    font-size: 28px;
+    background-color: rgba(158,158,158,0.2) !important;
+    box-shadow: none !important;
     /*transition: all 2s linear;*/
 }
 
 .md-button:active {
     /*transition: 2s linear;*/
-    background: linear-gradient(#6EBBC3, #F7FFE5);
+    /*background-color: #F7FFE5 !important;*/
     /*animation: rubberBand .3s;*/
     color: white !important;
+}
+
+.tool-btn {
+    background-color: #DFDFDF;
 }
 
 @keyframes pulse {
@@ -196,16 +200,21 @@ h1 {
 }
 
 .circle-btn {
-    width: 72px !important;
-    height: 72px !important;
+    width: 80px !important;
+    height: 80px !important;
     border-radius: 50%;
     border: solid 2px #4BDAB6;
     padding: 0;
     min-width: 0px;
-    margin: 0 10px;
+    margin: 0 14px;
     background-color: #FFFFFF !important;
     color: black !important;
     padding: 6px !important;
+    box-shadow: none !important;
+}
+
+.circle-btn:active {
+    background: linear-gradient(#6EBBC3, #F7FFE5);
 }
 
 .tab {
@@ -214,6 +223,7 @@ h1 {
     height: 68px;
     font-size: 36px;
     padding: 15px;
+
 }
 
 .tab span {
@@ -225,7 +235,7 @@ h1 {
     height: 495px;
     width: 865px;
     /*border: solid 1px;*/
-    border-bottom: solid 4px #D8D8D8;
+    /*border-bottom: solid 4px #D8D8D8;*/
     padding: 0 10px;
 }
 
@@ -267,10 +277,11 @@ div#container {
 div#input {
     /*輸入*/
     position: relative;
-    width: 276px;
+    width: 324px;
 }
 
 #input label {
+    margin-left: 34px;
     font-size: 28px
 }
 

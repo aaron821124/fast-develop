@@ -1,9 +1,9 @@
 <div ng-controller="idCtrl" style="height: 100%;position: relative;" layout="column" layout-align="start center">
     <div style="padding: 5px"></div>
-    <div id="input" flex="15">
-        <form name="inputForm" style="">
-            <md-input-container class="md-block">
-                <label>請輸入身分證後九碼</label>
+    <div id="input" flex="15" layout="row">
+        <form name="inputForm" style="" flex>
+            <md-input-container class="md-block" layout="column" layout-align="start center">
+                <label flex="none">請輸入身分證後九碼</label>
                 <input name="input" md-minlength="11" ng-model="input" style="height: 50px; font-size: 28px">
                 <!-- <div ng-messages="inputForm.input.$error">
                     <div ng-message="message">
@@ -22,7 +22,7 @@
     <div style='margin: 5px 0' flex="none" ng-repeat="row in [0, 1, 2]">
         <md-button ng-click="clickBtn(num)" class="md-fab circle-btn" ng-repeat="num in [row*3+1, row*3+2, row*3+3]">{{num}}</md-button>
     </div>
-    <div style="width: 276px" flex="none" layout='row' layout-align="end">
+    <div style="margin: 5px 0;" flex="none" layout='row' layout-align="end">
         <md-button class="md-fab circle-btn" flex="none" ng-click="back()">後退</md-button>
         <md-button class="md-fab circle-btn" flex="none" ng-click="clickBtn(0)">0</md-button>
         <md-button class="md-fab circle-btn" flex="none" ng-click="enter()">確認</md-button>
