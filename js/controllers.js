@@ -6,9 +6,13 @@ angular.module('app')
 
         $scope.idCard = idCard;
 
-        $scope.patientInfo = {
-            name: 123
+        $rootScope.patient = {
+            patientInfo: {}
         };
+
+        $rootScope.home = function(){
+            $state.go('home');
+        }
 
         console.log($state.get());
         $scope.time = new Date();
@@ -38,13 +42,13 @@ angular.module('app')
     .controller('icCtrl', function($scope, $state) {
         $scope.$parent.$parent.step = 1;
 
-        console.log($scope.patientInfo);
+        console.log($scope.patient.patientInfo);
         console.log('check');
 
         ICCardInserted(function(card) {
-            $scope.patientInfo.IDNumber = card.IDNumber;
+            $scope.patient.patientInfo = card;
             $scope.next();
-            console.log($scope.patientInfo);
+            console.log($scope.patient.patientInfo);
         })
 
         ICCardEjected(function() {})
@@ -57,7 +61,6 @@ angular.module('app')
     })
     .controller('faceCtrl', function($scope, $state, $interval) {
         $scope.$parent.$parent.step = 2;
-        console.log($scope.patientInfo);
 
 
 
@@ -96,7 +99,8 @@ angular.module('app')
 
         function check() {
             var myPic = TakePicture("video");
-            CheckFace($scope.patientInfo.IDNumber, myPic, function(result) {
+            console.log($scope.patient.patientInfo);
+            CheckFace($scope.patient.patientInfo.IDNumber, myPic, function(result) {
                 if (result) {
                     console.log("辨識成功");
                     $scope.sucess++;
@@ -109,29 +113,33 @@ angular.module('app')
         var interval;
 
         $scope.startCheck = function() {
+            InitWebCam("video");
+            $scope.$parent.$parent.hideTab = false;
             $scope.sucess = 0;
             $scope.fail = 0;
             $scope.checkFail = 0;
-            InitWebCam("video");
-            interval = $interval(function() {
-                check();
-                console.log($scope.sucess);
-                if ($scope.sucess >= 2) {
-                    $interval.cancel(interval);
-                    setTimeout(function() {
-                        $scope.next();
-                    }, 1000)
-                }
-                if ($scope.fail >= 5) {
-                    clearStream();
-                    $scope.checkFail = true;
-                    $interval.cancel(interval);
-                }
-            }, 1000);
+            setTimeout(function() {
+                interval = $interval(function() {
+                    check();
+                    if ($scope.sucess >= 2) {
+                        $interval.cancel(interval);
+                        setTimeout(function() {
+                            $scope.next();
+                        }, 1000)
+                    }
+                    if ($scope.fail >= 5) {
+                        clearStream();
+                        $scope.checkFail = true;
+                        $scope.$parent.$parent.hideTab = true;
+                        $interval.cancel(interval);
+                    }
+                }, 1000);
+                $scope.check = true;
+            }, 2500);
         };
 
-        $scope.startCheck();
 
+        $scope.startCheck();
 
         function clearStream() {
             $interval.cancel(interval);
@@ -143,6 +151,7 @@ angular.module('app')
 
         $scope.$on('$stateChangeStart',
             function(event, toState, toParams, fromState, fromParams) {
+                $scope.$parent.$parent.hideTab = false;
                 clearStream();
             })
 
@@ -188,7 +197,8 @@ angular.module('app')
                 var number = input;
                 getUserData(c + number, function(result) {
                     if (result) {
-                        $scope.patientInfo.IDNumber = result.IDNumber;
+                        console.log(result)
+                        $scope.patient.patientInfo = result;
                         $scope.next();
                     }
                 });
@@ -216,10 +226,10 @@ angular.module('app')
         $scope.$parent.$parent.step = 2;
 
         console.log('check');
-        console.log($scope.patientInfo);
+        console.log($scope.patient.patientInfo);
         InitFingerPrint("COM4");
 
-        CheckFingerPrint($scope.patientInfo.IDNumber, function(result) {
+        CheckFingerPrint($scope.patient.patientInfo.IDNumber, function(result) {
             if (result) {
                 $scope.next();
             } else {
@@ -236,6 +246,8 @@ angular.module('app')
     .controller('checkCtrl', function($scope, $state) {
         $scope.$parent.$parent.step = 3;
 
+
+        console.log($scope.patient.patientInfo);
 
         $scope.next = function() {
             $scope.$parent.$parent.step = 4;

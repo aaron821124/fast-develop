@@ -9,7 +9,12 @@ body {
 }
 
 h1 {
-    font-size: 36px
+    font-size: 36px;
+}
+
+.line-height {
+    line-height: 80px;
+    text-align: center;
 }
 
 /*#init.ng-enter {
@@ -188,7 +193,7 @@ h1 {
     background-color: #DFDFDF;
 }
 
-@keyframes pulse {
+@keyframes highlight {
     from {
         background: linear-gradient(#6EBBC3, #F7FFE5);
         color: white !important;
@@ -215,6 +220,12 @@ h1 {
 
 .circle-btn:active {
     background: linear-gradient(#6EBBC3, #F7FFE5);
+}
+
+
+.btn-highlight {
+    color: #E7E7E7 !important;
+    animation: highlight 2.5s infinite, pulse 1s infinite;
 }
 
 .tab {
@@ -281,7 +292,7 @@ div#input {
 }
 
 #input label {
-    margin-left: 34px;
+    margin-left: 20px;
     font-size: 28px
 }
 

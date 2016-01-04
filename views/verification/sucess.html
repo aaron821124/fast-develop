@@ -1,9 +1,10 @@
-
-<div id="container" layout="column" layout-align="center center">
-	<h1>
-		姓名：<purple id="patient">AAA</purple> 
+<div id="container" layout="column" layout-align="center center" ng-init="step = 4">
+	<h1 class="line-height">
+		姓名：<purple id="patient">{{patient.patientInfo.Name}}</purple> 
 		掛號號碼：<purple>14</purple><br/>
+		您已報到成功!<br/>
+		您可以選擇<md-button ng-click="home()">離開</md-button><br/>
+		或點選下方按鈕觀看相關資訊
 	</h1>
-	<br/>
-	<h1>您已報到成功!</h1>
+	<h1></h1>
 </div>

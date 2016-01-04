@@ -3,7 +3,7 @@
     <div id="input" flex="15" layout="row">
         <form name="inputForm" style="" flex>
             <md-input-container class="md-block" layout="column" layout-align="start center">
-                <label flex="none">請輸入身分證後九碼</label>
+                <label flex="none">請輸入身分證數字部分</label>
                 <input name="input" md-minlength="11" ng-model="input" style="height: 50px; font-size: 28px">
                 <!-- <div ng-messages="inputForm.input.$error">
                     <div ng-message="message">
@@ -25,6 +25,6 @@
     <div style="margin: 5px 0;" flex="none" layout='row' layout-align="end">
         <md-button class="md-fab circle-btn" flex="none" ng-click="back()">後退</md-button>
         <md-button class="md-fab circle-btn" flex="none" ng-click="clickBtn(0)">0</md-button>
-        <md-button class="md-fab circle-btn" flex="none" ng-click="enter()">確認</md-button>
+        <md-button class="md-fab circle-btn" ng-class="{'btn-highlight': input.length == 11}" flex="none" ng-click="enter()">確認</md-button>
     </div>
 </div>
