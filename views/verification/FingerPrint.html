@@ -1,17 +1,8 @@
 <div ng-controller="fingerCtrl" id="container">
-	<h1>請按壓指紋進行認證</h1>
-	<img src="img/fingerprint.png"><br/><br/>
+    <h1>請按壓指紋進行認證</h1>
+    <div flex style="" layout="row" layout-align="center center">
+        <span flex></span>
+        <img flex='none' style="height:400px" src="img/fingerprint.svg" />
+        <span flex></span>
+    </div>
 </div>
-<script>
-        InitFingerPrint("COM3");
-
-        function Check() {
-            CheckFingerPrint("N124231394", function (result) {
-                if (result) {
-                    alert("辨識成功");
-                } else {
-                    alert("辨識失敗");
-                }
-            });
-        }
-</script>
