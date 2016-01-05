@@ -1,4 +1,5 @@
-<div id="container" layout="row" layout-align="center end" ng-init="">
-	<img flex="80" src="img/map.png">
-	<img flex="none" id="print" src="img/print.png">
+<div ng-controller="infoCtrl" id="container" layout="column" layout-align="start center" ng-init="">
+    <h3 style="margin-top: 30px; width:100%">如不動作，系統將於<purple>{{countDown}}</purple>秒後自動登出</h3>
+	<img ng-class="{'full-screen': full}" flex="80" src="img/map.png" ng-click="toggleMap()">
+	<!-- <img flex="none" id="print" src="img/print.png"> -->
 </div>

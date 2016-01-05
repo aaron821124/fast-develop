@@ -12,8 +12,12 @@ h1 {
     font-size: 36px;
 }
 
+h3 {
+    font-size: 25px;
+}
+
 .line-height {
-    line-height: 80px;
+    line-height: 60px;
     text-align: center;
 }
 
@@ -146,6 +150,25 @@ h1 {
     background: rgba(234, 234, 234, 0.2);
     border: dashed 10px;
     border-radius: 20px;
+}
+
+@keyframes arrowMove{
+    from {
+        top: 370px;
+        left: 700px;
+    }
+    to {
+        top: 350px;
+        left: 680px;
+    }
+}
+
+#arrow {
+    position: absolute;
+    top: 370px;
+    left: 700px;
+    transform: rotate(-30deg);
+    animation: arrowMove 0.8s infinite;
 }
 
 #verification-container {
@@ -310,13 +333,13 @@ h1 {
     animation: form{opacity: 0;} to{opacity: 1;};
 }*/
 
-#main.ng-enter {
+.moveIn.ng-enter {
     transition: 0.5s linear;
     opacity: 0;
     margin-left: -300px;
 }
 
-#main.ng-enter-active {
+.moveIn.ng-enter-active {
     opacity: 1;
     margin-left: 0px;
 }
@@ -423,4 +446,21 @@ purple {
 
 .step span {
     margin: 0px 14px;
+}
+
+.fade.ng-enter {
+    animation: fadeIn 1.5s;
+}
+
+/*.fade.ng-leave {
+    animation: fadeOut 1.5s;
+}*/
+
+.full-screen {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 1024px;
+    height: 768px;
+    z-index: 10;
 }

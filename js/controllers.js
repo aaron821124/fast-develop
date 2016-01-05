@@ -10,7 +10,9 @@ angular.module('app')
             patientInfo: {}
         };
 
-        $rootScope.home = function(){
+        $scope.hideTab = false;
+
+        $rootScope.home = function() {
             $state.go('home');
         }
 
@@ -252,5 +254,44 @@ angular.module('app')
         $scope.next = function() {
             $scope.$parent.$parent.step = 4;
             $state.go('verification.sucess')
+        }
+    })
+    .controller('successCtrl', function($scope, $timeout, $state) {
+        $scope.$parent.$parent.step = 4;
+
+        $scope.selfStep = 1;
+
+        $timeout(function() {
+            $state.go('verification.sucess-info');
+        }, 3000);
+
+    })
+    .controller('infoCtrl', function($scope, $interval, $state) {
+        $scope.countDown = 15;
+        $scope.$parent.$parent.step = 4;
+
+
+        var interval = $interval(function() {
+            if ($scope.countDown == 0) {
+                $scope.home();
+                $interval.cancel(interval);
+            }
+            $scope.countDown--;
+        }, 1000)
+
+        $scope.$on('$stateChangeStart',
+            function(event, toState, toParams, fromState, fromParams) {
+                $interval.cancel(interval);
+            });
+
+        $scope.full = false;
+        $scope.toggleMap = function(){
+            $scope.countDown = 15;
+            if($scope.full){
+                $scope.full = false;
+            }
+            else {
+                $scope.full = true;
+            }
         }
     })
