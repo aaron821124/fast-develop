@@ -17,6 +17,49 @@ h1 {
     text-align: center;
 }
 
+.touch {
+    /*animation: rubberBand 2s infinite;*/
+}
+
+@keyframes shine {
+    from {
+        content: "";
+        position: absolute;
+        top: 405%;
+        left: -230%;
+        opacity: 1;
+    }
+    to {
+        opacity: 1;
+        width: 0%;
+        height: 0;
+        top: -100%;
+        left: 120%;
+    }
+}
+
+.shine:after {
+    animation: shine 5s infinite;
+    content: "";
+    position: absolute;
+    width: 300%;
+    height: 200%;
+    opacity: 1;
+    transform: rotate(30deg);
+    background: rgba(255, 255, 255, 0.13);
+    background: linear-gradient( to right, rgba(255, 255, 255, 0.13) 0%, rgba(255, 255, 255, 0.13) 77%, rgba(255, 255, 255, 0.5) 92%, rgba(255, 255, 255, 0.0) 100%);
+}
+
+.shine:hover:after {
+    opacity: 1;
+    top: 30%;
+    left: 30%;
+    transition-property: left, top, opacity;
+    transition-duration: 0.7s, 0.7s, 0.15s;
+    transition-timing-function: ease;
+}
+
+
 /*#init.ng-enter {
     position: absolute;
     animation-delay: 1.9s;
@@ -24,20 +67,33 @@ h1 {
     animation-name: fadeIn;
 }*/
 
-@keyframes appear{
+@keyframes appear {
     0% {
+        z-index: 5;
         opacity: 0;
     }
-    50%{
+    50% {
         opacity: 0;
     }
     100% {
+        z-index: 5;
         opacity: 1;
     }
 }
 
+#init>div>div:nth-child(1) {
+    opacity: 0;
+    animation: appear 2.5s;
+    animation-direction: reverse;
+    background: -webkit-linear-gradient(rgba(255, 255, 255, 0.13) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.13) 100%);
+    position: absolute;
+    top: 355px;
+    height: 54px;
+    width: 1024px;
+    z-index: -1;
+}
 
-#init>div>div {
+#init>div>div:nth-child(3) {
     animation: appear 2.5s;
 }
 
@@ -72,10 +128,10 @@ h1 {
 }
 
 #top-img {
-    animation: midToUp 2s;
+    animation: midToUp 2s ease-out;
 }
 
-#down-img{
+#down-img {
     animation: midToBottom 2s;
 }
 
@@ -177,7 +233,7 @@ h1 {
 .md-button {
     /*border: solid 2px;*/
     font-size: 28px;
-    background-color: rgba(158,158,158,0.2) !important;
+    background-color: rgba(158, 158, 158, 0.2) !important;
     box-shadow: none !important;
     /*transition: all 2s linear;*/
 }
@@ -222,7 +278,6 @@ h1 {
     background: linear-gradient(#6EBBC3, #F7FFE5);
 }
 
-
 .btn-highlight {
     color: #E7E7E7 !important;
     animation: highlight 2.5s infinite, pulse 1s infinite;
@@ -234,7 +289,6 @@ h1 {
     height: 68px;
     font-size: 36px;
     padding: 15px;
-
 }
 
 .tab span {
