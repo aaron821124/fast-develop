@@ -263,11 +263,11 @@ angular.module('app')
 
         $timeout(function() {
             $state.go('verification.sucess-info');
-        }, 3000);
+        }, 2500);
 
     })
     .controller('infoCtrl', function($scope, $interval, $state) {
-        $scope.countDown = 15;
+        $scope.countDown = 30;
         $scope.$parent.$parent.step = 4;
 
 
@@ -286,7 +286,7 @@ angular.module('app')
 
         $scope.full = false;
         $scope.toggleMap = function(){
-            $scope.countDown = 15;
+            $scope.countDown = 30;
             if($scope.full){
                 $scope.full = false;
             }

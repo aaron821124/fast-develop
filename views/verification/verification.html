@@ -36,16 +36,16 @@
         <div flex="none" layout="column" ui-view id="main" ng-class="{'moveIn':step == 1 || step == 2,'fade': step == 3 || step == 4}"></div>
         <div flex="none" style="width: 865px" layout="row">
             <div flex ng-show="step == 1" layout="row" layout-align="center center">
-                <md-button flex class="md-raised tab" ui-sref="verification.ic-card">健保卡</md-button>
-                <md-button flex class="md-raised tab" ui-sref="verification.id-card">身分證</md-button>
+                <md-button ng-class="{'select': $state.$current.name == 'verification.ic-card'}" flex class="md-raised tab" ui-sref="verification.ic-card">健保卡</md-button>
+                <md-button ng-class="{'select': $state.$current.name == 'verification.id-card'}" flex class="md-raised tab" ui-sref="verification.id-card">身分證字號</md-button>
             </div>
             <div flex ng-show="step == 2 && !hideTab" layout="row">
-                <md-button flex class="tab" ui-sref="verification.face">臉部辨識</md-button>
-                <md-button flex class="tab" ui-sref="verification.finger-print">指紋辨識</md-button>
+                <md-button ng-class="{'select': $state.$current.name == 'verification.face'}" flex class="tab" ui-sref="verification.face">臉部辨識</md-button>
+                <md-button ng-class="{'select': $state.$current.name == 'verification.finger-print'}" flex class="tab" ui-sref="verification.finger-print">指紋辨識</md-button>
             </div>
-            <div flex ng-show="step == 4" layout="row">
-                <md-button flex class="tab" ui-sref="verification.sucess-info">看診資訊</md-button>
-                <md-button flex class="tab" ui-sref="verification.sucess-place">診間位置</md-button>
+            <div flex ng-show="step == 4 && !($state.$current.name == 'verification.sucess')" layout="row">
+                <md-button ng-class="{'select': $state.$current.name == 'verification.sucess-info' || $state.$current.name == 'verification.sucess'}" flex class="tab" ui-sref="verification.sucess-info">看診資訊</md-button>
+                <md-button ng-class="{'select': $state.$current.name == 'verification.sucess-place'}" flex class="tab" ui-sref="verification.sucess-place">診間位置</md-button>
             </div>
         </div>
     </div>

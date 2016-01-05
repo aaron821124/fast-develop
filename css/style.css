@@ -152,7 +152,7 @@ h3 {
     border-radius: 20px;
 }
 
-@keyframes arrowMove{
+@keyframes arrowMove {
     from {
         top: 370px;
         left: 700px;
@@ -302,8 +302,11 @@ h3 {
 }
 
 .btn-highlight {
-    color: #E7E7E7 !important;
-    animation: highlight 2.5s infinite, pulse 1s infinite;
+    /*color: #E7E7E7 !important;*/
+    color: #ffffff !important;
+    background: linear-gradient(#6EBBC3, #F7FFE5);
+    animation: pulse 1s infinite;
+    /*animation: highlight 2.5s infinite, pulse 1s infinite;*/
 }
 
 .tab {
@@ -312,18 +315,52 @@ h3 {
     height: 68px;
     font-size: 36px;
     padding: 15px;
+    overflow: visible;
 }
 
 .tab span {
     margin: auto;
 }
 
+.tab.select {
+    background-color: white !important;
+}
+
+/*.tab.select:before {
+    pointer-events: none;
+    position: absolute;
+    content: '';
+    border-style: solid;
+    left: calc(50% - 40px);
+    top: 0;
+    border-width: 0 40px 40px 40px;
+    border-color: transparent transparent rgba(158, 158, 158, 0.2) transparent;
+    overflow: visible;
+    transform: translateY(-40px);
+}*/
+
+/*.tab.select:after {
+    pointer-events: none;
+    position: absolute;
+    z-index: -1;
+    content: '';
+    border-style: solid;
+    left: calc(50% - 10px);
+    left: 0;
+    top: 0;
+    border-color: rgba(158, 158, 158, 0.2);
+    width: 100%;
+    border-width: 25px 0 0 0;
+    overflow: visible;
+    transform: translateY(-25px);
+}*/
+
 #main {
     /*background: #EFEEDE;*/
     height: 495px;
     width: 865px;
     /*border: solid 1px;*/
-    /*border-bottom: solid 4px #D8D8D8;*/
+    border-bottom: solid 4px #D8D8D8;
     padding: 0 10px;
 }
 
@@ -449,8 +486,9 @@ purple {
 }
 
 .fade.ng-enter {
-    animation: fadeIn 1.5s;
+    animation: fadeIn 2s;
 }
+
 
 /*.fade.ng-leave {
     animation: fadeOut 1.5s;
@@ -463,4 +501,5 @@ purple {
     width: 1024px;
     height: 768px;
     z-index: 10;
+    margin: 0;
 }
