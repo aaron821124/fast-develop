@@ -2,9 +2,9 @@ html,
 body {
     width: 1024px;
     height: 768px;
-    /*overflow: hidden;*/
+    overflow: hidden;
     color: #4A4A4A !important;
-    font-family: 儷黑 Pro, Heiti TC, Source Han Sans, 微軟正黑體;
+    font-family: Heiti TC, Source Han Sans, 微軟正黑體;
     font-weight: bold;
 }
 
@@ -35,10 +35,10 @@ h3 {
     }
     to {
         opacity: 1;
-        width: 0%;
+        /*width: 0%;
         height: 0;
-        top: -100%;
-        left: 120%;
+*/        top: -200%;
+        left: 90%;
     }
 }
 
@@ -278,7 +278,7 @@ h3 {
     color: white !important;
 }
 
-#tab-container {
+#tab-container>div {
     border-top: solid 4px #D8D8D8;
 }
 

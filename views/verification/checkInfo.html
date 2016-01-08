@@ -1,13 +1,18 @@
 <div ng-controller="checkCtrl" id="container" layout="column" layout-align="center center">
-	<span flex="10"></span>
-	<h1 class="line-height">
+    <span flex="10"></span>
+    <h1 class="line-height">
 		您是：<purple id="patient">{{patient.patientInfo.Name}}</purple><br/>
 		<!-- 掛號號碼：<purple>14</purple><br/> -->
-		醫師：<purple>陳俊杉 醫師</purple><br/>
+		就診醫師：<purple>陳俊杉 醫師</purple><br/>
 		科別：<purple>一般外科</purple>
 	</h1>
-	<div layout="column" layout-align="center center">
-		<h1>是否確認報到？</h1>
-		<md-button ng-click="next()" style="width: 200px;height: 84px;"><h1>確認報到</h1></md-button>
-	</div>
+    <div layout="column" layout-align="center center">
+        <h1>是否確認報到？</h1>
+        <div layout="row">
+            <md-button ng-click="next()" style="width: 200px;height: 84px;">
+                <h1>確認報到</h1></md-button>
+            <md-button ng-click="next()" style="width: 200px;height: 84px;">
+                <h1>資料錯誤</h1></md-button>
+        </div>
+    </div>
 </div>

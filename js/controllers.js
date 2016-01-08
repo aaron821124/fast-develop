@@ -16,30 +16,30 @@ angular.module('app')
             $state.go('home');
         }
 
-        console.log($state.get());
+        //-----------------------time------------------------
         $scope.time = new Date();
-        $scope.hx2 = 0;
-        $scope.hy2 = 0;
-        $scope.mx2 = 0;
-        $scope.my2 = 0;
-        drawClock();
+        // $scope.hx2 = 0;
+        // $scope.hy2 = 0;
+        // $scope.mx2 = 0;
+        // $scope.my2 = 0;
+        // drawClock();
         $interval(function() {
             $scope.time = new Date();
-            drawClock();
+            // drawClock();
         }, 10000);
 
-        function drawClock() {
-            var min = $scope.time.getMinutes();
-            var hour = $scope.time.getHours() % 12 + min / 60;
+        // function drawClock() {
+        //     var min = $scope.time.getMinutes();
+        //     var hour = $scope.time.getHours() % 12 + min / 60;
 
-            var hourAng = hour * 30 / 180 * 3.1415926;
-            var minAng = min * 6 / 180 * 3.1415926;
-            $scope.hy2 = 25 - 10 * Math.cos(hourAng);
-            $scope.hx2 = 25 + 10 * Math.sin(hourAng);
-            $scope.my2 = 25 - 20 * Math.cos(minAng);
-            $scope.mx2 = 25 + 20 * Math.sin(minAng);
-            // console.log(hy2, hx2);
-        }
+        //     var hourAng = hour * 30 / 180 * 3.1415926;
+        //     var minAng = min * 6 / 180 * 3.1415926;
+        //     $scope.hy2 = 25 - 10 * Math.cos(hourAng);
+        //     $scope.hx2 = 25 + 10 * Math.sin(hourAng);
+        //     $scope.my2 = 25 - 20 * Math.cos(minAng);
+        //     $scope.mx2 = 25 + 20 * Math.sin(minAng);
+        //     // console.log(hy2, hx2);
+        // }
     })
     .controller('icCtrl', function($scope, $state) {
         $scope.$parent.$parent.step = 1;
@@ -141,8 +141,8 @@ angular.module('app')
         };
 
 
-        // $scope.startCheck();
-            InitWebCam("video");
+        $scope.startCheck();
+            // InitWebCam("video");
         
 
         function clearStream() {
@@ -185,7 +185,7 @@ angular.module('app')
         $scope.errorMessage = "";
 
         $scope.enter = function() {
-            console.log($scope.input.length)
+            $scope.errorMessage = "";
             if ($scope.input.length < 11) {
                 $scope.errorMessage = "輸入未滿九碼，請輸入九碼數字";
                 return;
@@ -271,6 +271,15 @@ angular.module('app')
     .controller('infoCtrl', function($scope, $interval, $state) {
         $scope.countDown = 30;
         $scope.$parent.$parent.step = 4;
+
+        if($scope.patient.patientInfo.IDNumber){
+            if($scope.patient.patientInfo.IDNumber[1] == 1){
+                $scope.patient.patientInfo.sex = '男'
+            }
+            else {
+                $scope.patient.patientInfo.sex = '女'
+            }
+        }
 
 
         var interval = $interval(function() {
