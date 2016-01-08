@@ -1,53 +1,38 @@
 <div ng-controller="mainCtrl" id="verification-container" layout="column" layout-align="top center" layout-fill>
-    <div style=""></div>
-    <img id="top-img" width="1024px" height="54px" src="img/down.png">
-    <div flex layout="column" layout-align="start center">
-        <div id="clock" layout='row' layout-align="center center">
-            <!-- <svg style="padding: 0;" width="55" height="55">
-                <filter id="drop-shadow" width="150%" height="150%">
-                    <feGaussianBlur in="SourceAlpha" stdDeviation="2" />
-                    <feOffset dx="2" dy="2" result="offsetblur" />
-                    <feFlood flood-color="#000000" />
-                    <feComposite in2="offsetblur" operator="in" />
-                    <feMerge>
-                        <feMergeNode/>
-                        <feMergeNode in="SourceGraphic" />
-                    </feMerge>
-                </filter>
-                <g filter="url(#drop-shadow)">
-                    <circle stroke="grey" stroke-width="3" cx="25" cy="25" r="23" fill="none"></circle>
-                    <line stroke="grey" stroke-width="3" x1="25" y1="25" x2="{{hx2}}" y2="{{hy2}}"></line>
-                    <line stroke="grey" stroke-width="3" x1="25" y1="25" x2="{{mx2}}" y2="{{my2}}"></line>
-                </g>
-            </svg> -->
-            <h3 style="margin: 0; font-size: 22px">{{time | date : 'a HH:mm'}}</h3>
+    <div id="center-decoration"><h1 id="intro">您好，歡迎使用</h1></div>
+    <!-- <img id="top-img" width="1024px" height="54px" src="img/down.png"> -->
+    <div id="main-container" flex layout="column" layout-align="center center">
+        <div id="clock" layout='row' layout-align="start center">
         </div>
-        <div style="width: 865px;position: relative; top: 10px" flex="none" layout="row" layout-align="start center">
-            <div class="steps">
-                <span ng-class="{'current-step': step == 1}" style="">第一階段認證<ng-md-icon icon="play_arrow"></ng-md-icon></span>
-                <span ng-class="{'current-step': step == 2}" style="">第二階段認證<ng-md-icon icon="play_arrow"></ng-md-icon></span>
-                <span ng-class="{'current-step': step == 3}" style="">確認資料<ng-md-icon icon="play_arrow"></ng-md-icon></span>
-                <span ng-class="{'current-step': step == 4}" style="">完成報到</span>
+        <div style="width: 100%;position: relative; top: 10px" flex="none" layout="row" layout-align="center center">
+            <div layout="column">
+                <h3 style="margin: 0; font-size: 28px">{{time | date : 'a HH:mm'}}</h3>
+                <div class="steps">
+                    <span ng-class="{'current-step': step == 1}" style="">第一階段認證<ng-md-icon icon="play_arrow"></ng-md-icon></span>
+                    <span ng-class="{'current-step': step == 2}" style="">第二階段認證<ng-md-icon icon="play_arrow"></ng-md-icon></span>
+                    <span ng-class="{'current-step': step == 3}" style="">確認資料<ng-md-icon icon="play_arrow"></ng-md-icon></span>
+                    <span ng-class="{'current-step': step == 4}" style="">完成報到</span>
+                </div>
             </div>
             <md-button class="tool-btn" style="">求助</md-button>
             <md-button class="tool-btn" style="" ui-sref="home"><span>離開</span></md-button>
         </div>
         <div style="padding:11px"></div>
         <div flex="none" layout="column" ui-view id="main" ng-class="{'moveIn':step == 1 || step == 2,'fade': step == 3 || step == 4}"></div>
-        <div flex="none" style="width: 865px" layout="row">
-            <div flex ng-show="step == 1" layout="row" layout-align="center center">
+        <div id="tab-container" flex="none" style="width: 865px;height:80px" layout="row">
+            <div flex class="fade" ng-if="step == 1" layout="row" layout-align="center center">
                 <md-button ng-class="{'select': $state.$current.name == 'verification.ic-card'}" flex class="md-raised tab" ui-sref="verification.ic-card">健保卡</md-button>
                 <md-button ng-class="{'select': $state.$current.name == 'verification.id-card'}" flex class="md-raised tab" ui-sref="verification.id-card">身分證字號</md-button>
             </div>
-            <div flex ng-show="step == 2 && !hideTab" layout="row">
+            <div flex class="fade" ng-if="step == 2 && !hideTab" layout="row">
                 <md-button ng-class="{'select': $state.$current.name == 'verification.face'}" flex class="tab" ui-sref="verification.face">臉部辨識</md-button>
                 <md-button ng-class="{'select': $state.$current.name == 'verification.finger-print'}" flex class="tab" ui-sref="verification.finger-print">指紋辨識</md-button>
             </div>
-            <div flex ng-show="step == 4 && !($state.$current.name == 'verification.sucess')" layout="row">
+            <div flex class="fade" ng-if="step == 4 && !($state.$current.name == 'verification.sucess')" layout="row">
                 <md-button ng-class="{'select': $state.$current.name == 'verification.sucess-info' || $state.$current.name == 'verification.sucess'}" flex class="tab" ui-sref="verification.sucess-info">看診資訊</md-button>
                 <md-button ng-class="{'select': $state.$current.name == 'verification.sucess-place'}" flex class="tab" ui-sref="verification.sucess-place">診間位置</md-button>
             </div>
         </div>
     </div>
-    <img id="down-img" width="1024px" height="54px" src="img/down.png">
+    <img id="down-img" width="1024px" height="54px" src="img/pg/back4.png">
 </div>

@@ -85,20 +85,28 @@ h3 {
     }
 }
 
-#init>div>div:nth-child(1) {
+#init #center-decoration {
     opacity: 0;
-    animation: appear 2.5s;
+    animation: appear 3.5s;
     animation-direction: reverse;
     background: -webkit-linear-gradient(rgba(255, 255, 255, 0.13) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.13) 100%);
     position: absolute;
     top: 355px;
-    height: 54px;
+    /*height: 54px;*/
     width: 1024px;
     z-index: -1;
+    text-align: center;
+    font-size: 100px;
+    /*border-bottom: gray solid 5px;*/
 }
 
-#init>div>div:nth-child(3) {
-    animation: appear 2.5s;
+#intro {
+    font-size: 50px;
+}
+
+#init #main-container {
+    animation: appear 3.5s;
+    width: 100%;
 }
 
 @keyframes midToUp {
@@ -136,7 +144,8 @@ h3 {
 }
 
 #down-img {
-    animation: midToBottom 2s;
+    /*animation: midToBottom 2s;*/
+    animation: appear 3.5s;
 }
 
 #home {
@@ -178,9 +187,10 @@ h3 {
 }
 
 #clock {
-    position: absolute;
+    /* position: absolute;
     top: 154px;
-    left: 825px;
+    left: 825px;*/
+    width: 100%;
 }
 
 .steps {
@@ -268,8 +278,16 @@ h3 {
     color: white !important;
 }
 
+#tab-container {
+    border-top: solid 4px #D8D8D8;
+}
+
 .tool-btn {
     background-color: #DFDFDF;
+    max-height: none;
+    width: 128px;
+    height: 50px;
+    padding: 6px;
 }
 
 @keyframes highlight {
@@ -283,8 +301,8 @@ h3 {
     }
 }
 
-.circle-btn {
-    width: 80px !important;
+.id-btn {
+    /*width: 80px !important;
     height: 80px !important;
     border-radius: 50%;
     border: solid 2px #4BDAB6;
@@ -294,11 +312,24 @@ h3 {
     background-color: #FFFFFF !important;
     color: black !important;
     padding: 6px !important;
-    box-shadow: none !important;
+    box-shadow: none !important;*/
+    width: 120px;
+    height: 80px;
+    margin:0;
+    background: linear-gradient(147deg, #e9f5dd 0%, #e9f5dd 50%, #D5ecbd 51%) 
 }
 
-.circle-btn:active {
-    background: linear-gradient(#6EBBC3, #F7FFE5);
+.id-btn.grey {
+    width: 120px;
+    height: 80px;
+    margin: 0;
+    background: linear-gradient(147deg, #dcdadd 0%, #dcdadd 50%, #d5d2d6 51%) 
+}
+
+.id-btn:active {
+    /*background: linear-gradient(#6EBBC3, #F7FFE5);*/
+    opacity: 0.8;
+    color: inherit !important;
 }
 
 .btn-highlight {
@@ -326,6 +357,7 @@ h3 {
     background-color: white !important;
 }
 
+
 /*.tab.select:before {
     pointer-events: none;
     position: absolute;
@@ -338,6 +370,7 @@ h3 {
     overflow: visible;
     transform: translateY(-40px);
 }*/
+
 
 /*.tab.select:after {
     pointer-events: none;
@@ -360,8 +393,25 @@ h3 {
     height: 495px;
     width: 865px;
     /*border: solid 1px;*/
-    border-bottom: solid 4px #D8D8D8;
     padding: 0 10px;
+}
+
+.face-frame div:nth-child(1) {}
+
+.face-frame {
+    width: 250px;
+    height: 250px;
+    -webkit-box-sizing: border-box;
+    /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;
+    /* Firefox, other Gecko */
+    box-sizing: border-box;
+    /* Opera/IE 8+ */
+    border: 15px solid #000000;
+    border-image: url('https://i.stack.imgur.com/1WlsT.png') 34% repeat;
+    position: absolute;
+    top: 145px;
+    left: 60px;
 }
 
 
@@ -402,7 +452,7 @@ div#container {
 div#input {
     /*輸入*/
     position: relative;
-    width: 324px;
+    width: 600px;
 }
 
 #input label {
@@ -486,6 +536,12 @@ purple {
 }
 
 .fade.ng-enter {
+    animation: fadeIn 2s;
+}
+
+
+
+.tab-container div.ng-enter{
     animation: fadeIn 2s;
 }
 

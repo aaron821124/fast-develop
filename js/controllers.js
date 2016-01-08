@@ -141,7 +141,9 @@ angular.module('app')
         };
 
 
-        $scope.startCheck();
+        // $scope.startCheck();
+            InitWebCam("video");
+        
 
         function clearStream() {
             $interval.cancel(interval);
