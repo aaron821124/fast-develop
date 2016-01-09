@@ -142,8 +142,8 @@ angular.module('app')
 
 
         $scope.startCheck();
-            // InitWebCam("video");
-        
+        // InitWebCam("video");
+
 
         function clearStream() {
             $interval.cancel(interval);
@@ -191,27 +191,31 @@ angular.module('app')
                 return;
             }
 
-            console.log($scope.errorMessage);
             var input = $scope.input;
             input = input.replace(/-/g, "");
             $scope.search = true;
-            console.log($scope.search);
+            $scope.resultCount = 0;
             for (var i = 0; i < 26; ++i) {
                 var c = String.fromCharCode(65 + i);
                 var number = input;
                 getUserData(c + number, function(result) {
+                    $scope.resultCount++;
+                    $scope.$apply();
                     if (result) {
-                        console.log(result)
                         $scope.patient.patientInfo = result;
                         $scope.next();
                     }
                 });
             };
-            $timeout(function() {
-                $scope.errorMessage = "查無號碼，請確認號碼是否正確";
-                $scope.search = false;
-            }, 5000);
+
         }
+
+        $scope.$watch('resultCount', function(newVal, oldVal) {
+            if (newVal == 26) {
+                $scope.errorMessage = "查無號碼，請確認輸入的號碼是否正確";
+                $scope.search = false;
+            }
+        })
 
         $scope.back = function() {
             $scope.errorMessage = "";
@@ -272,11 +276,10 @@ angular.module('app')
         $scope.countDown = 30;
         $scope.$parent.$parent.step = 4;
 
-        if($scope.patient.patientInfo.IDNumber){
-            if($scope.patient.patientInfo.IDNumber[1] == 1){
+        if ($scope.patient.patientInfo.IDNumber) {
+            if ($scope.patient.patientInfo.IDNumber[1] == 1) {
                 $scope.patient.patientInfo.sex = '男'
-            }
-            else {
+            } else {
                 $scope.patient.patientInfo.sex = '女'
             }
         }
@@ -296,12 +299,11 @@ angular.module('app')
             });
 
         $scope.full = false;
-        $scope.toggleMap = function(){
+        $scope.toggleMap = function() {
             $scope.countDown = 30;
-            if($scope.full){
+            if ($scope.full) {
                 $scope.full = false;
-            }
-            else {
+            } else {
                 $scope.full = true;
             }
         }
