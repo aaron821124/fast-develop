@@ -1,15 +1,10 @@
-<div ng-controller="faceCtrl" style="height: 100%">
-    <div ng-show="!checkFail" style="height: 100%" layout="column" layout-align="start center">
+<div ng-controller="faceCtrl" style="height: 100%;width: 100%">
+    <div ng-show="!checkFail" style="height: 100%;width:100%;position:relative;" layout="column" layout-align="start center">
         <div style="position: relative;" layout="row" layout-align="center center" flex="none">
             <h1>請對準攝影機進行認證</h1>
             <md-progress-circular ng-show="check" md-mode="indeterminate"></md-progress-circular>
-            <div class="face-frame">
-                <div class="corner"></div>
-                <div class="corner"></div>
-                <div class="corner"></div>
-                <div class="corner"></div>
-            </div>
         </div>
+        <div class="face-frame"></div>
         <video id="video" width="480" height="360"></video>
     </div>
     <div ng-show="checkFail" style="height: 100%" layout="column" layout-align="center center">

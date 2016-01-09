@@ -1,0 +1,21 @@
+<md-toolbar style="background-image: url(img/pg/back4.png)">
+    <div class="md-toolbar-tools">
+        <h2 style="color: black;font-size: 26px">離開？</h2>
+        <span flex></span>
+    </div>
+</md-toolbar>
+<md-dialog-content>
+    <div class="md-dialog-content">
+        <h3>您尚未完成報到，現在離開所有動作將需要重做！</h3>
+        <h3>請確定是否離開</h3>
+    </div>
+</md-dialog-content>
+<md-dialog-actions layout="row">
+    <span flex></span>
+    <md-button ng-click="cancel()">
+        否
+    </md-button>
+    <md-button ng-click="answer()" style="margin-right:20px;">
+		是
+    </md-button>
+</md-dialog-actions>

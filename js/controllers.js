@@ -1,5 +1,5 @@
 angular.module('app')
-    .controller('mainCtrl', function($rootScope, $scope, $interval, $state) {
+    .controller('mainCtrl', function($rootScope, $scope, $interval, $state, $mdDialog) {
         $rootScope.$state = $state;
 
         $scope.step = 1;
@@ -40,6 +40,59 @@ angular.module('app')
         //     $scope.mx2 = 25 + 20 * Math.sin(minAng);
         //     // console.log(hy2, hx2);
         // }
+
+        $scope.showLeaveConfirm = function(ev) {
+            // Appending dialog to document.body to cover sidenav in docs app
+            if ($scope.step == 4) {
+                $rootScope.home();
+                return;
+            }
+            $mdDialog.show({
+                controller: DialogController,
+                templateUrl: 'views/verification/leave.html',
+                parent: angular.element(document.body),
+                targetEvent: ev,
+                clickOutsideToClose: true
+            })
+
+            function DialogController($scope, $mdDialog) {
+                $scope.hide = function() {
+                    $mdDialog.hide();
+                };
+                $scope.cancel = function() {
+                    $mdDialog.cancel();
+                };
+                $scope.answer = function(answer) {
+                    $rootScope.home();
+                    $mdDialog.hide(answer);
+                };
+            }
+        };
+
+        $scope.showhelpConfirm = function(ev) {
+            // Appending dialog to document.body to cover sidenav in docs app
+            $mdDialog.show({
+                controller: DialogController,
+                templateUrl: 'views/verification/help.html',
+                parent: angular.element(document.body),
+                targetEvent: ev,
+                clickOutsideToClose: true
+            })
+
+            function DialogController($scope, $mdDialog) {
+                $scope.hide = function() {
+                    $mdDialog.hide();
+                };
+                $scope.cancel = function() {
+                    $mdDialog.cancel();
+                };
+                $scope.answer = function(answer) {
+                    $mdDialog.hide(answer);
+                };
+            }
+        };
+
+
     })
     .controller('icCtrl', function($scope, $state) {
         $scope.$parent.$parent.step = 1;
@@ -49,11 +102,20 @@ angular.module('app')
 
         ICCardInserted(function(card) {
             $scope.patient.patientInfo = card;
-            $scope.next();
-            console.log($scope.patient.patientInfo);
-        })
+            $scope.success = true;
+            ICCardEjected(function() {
+                $scope.next();
+            });
+            $scope.$apply();
+            // $scope.next();
+        });
+    
+        // setTimeout(function(){
+        //     // $scope.next();
+        //     $scope.success = true;
+        //     $scope.$apply();
+        // }, 3000);
 
-        ICCardEjected(function() {})
 
 
         $scope.next = function() {
