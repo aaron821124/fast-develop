@@ -347,13 +347,13 @@ angular.module('app')
         }
 
 
-        // var interval = $interval(function() {
-        //     if ($scope.countDown == 0) {
-        //         $scope.home();
-        //         $interval.cancel(interval);
-        //     }
-        //     $scope.countDown--;
-        // }, 1000)
+        var interval = $interval(function() {
+            if ($scope.countDown == 0) {
+                $scope.home();
+                $interval.cancel(interval);
+            }
+            $scope.countDown--;
+        }, 1000)
 
         $scope.data = ['姓名：' + $scope.patient.patientInfo.Name, 
         '就診醫師：陳俊杉', 

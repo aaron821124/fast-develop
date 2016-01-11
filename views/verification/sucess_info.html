@@ -16,17 +16,17 @@
             <span flex>姓名：{{patient.patientInfo.Name}}</span><span flex>就診醫師：陳俊杉</span>
         </h1>
         <h1 layout="row" style="width: 100%">
-            <span flex>性別：{{patient.patientInfo.sex}}</span><span flex>就診科別：一般外科</span>
+            <span flex>就診科別：一般外科</span><span flex>就診號碼：<purple>14</purple></span>
         </h1>
         <h1 layout="row" style="width: 100%">
-            <span flex>預估看診：<purple>15：20</purple></span><span flex>就診號碼：<purple>14</purple></span>
+            <span flex>目前看診：<purple>10</purple></span><span flex>預估看診：<purple>15：20</purple></span>
         </h1>
         <h1 layout="row" style="width: 100%">
             就診診間：<purple>2樓 H區 第三診</purple>(詳細請點診間位置)
         </h1>
         <div style="width: 100%" layout="row">
             <span flex></span>
-            <md-button class="md-fab circle-btn">列印</md-button>
+            <md-button class="md-fab circle-btn" ng-click="print()">列印</md-button>
             <md-button class="md-fab circle-btn" ng-click="home()">離開</md-button>
         </div>
         <div flex></div>
