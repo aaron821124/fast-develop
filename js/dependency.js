@@ -143,3 +143,44 @@ if (hasService('ICCardReaderService')) {
 } else {
     console.log("ICCardReaderService 未載入!");
 }
+
+
+//print
+
+
+var service_url = 'http://insight-kiosk.azurewebsites.net';
+
+//Fingerprint
+var flagFingerID_get = 0;
+var device_fingerID = '';
+var Error_count = 0;
+
+function InitPrint(Port) {
+    PrintService.InitPrint(Port);
+}
+
+function PrintOnMessage(arg) {
+
+}
+
+if (hasService('PrintService')) {
+    addHandler(EVENTS.PrintOnMessage, PrintOnMessage);
+    console.log("列印機已連接！");
+} else {
+    console.log("列印機未連接！");
+}
+
+function Print(strArray) {
+    for (var i = strArray.length - 1; i >= 0; i--) {
+        if (strArray[i].substring(0, 3) == "img") {
+            var s = strArray[i].split(',');
+            if (s[0] == "img") {
+                PrintService.printBitmap(s[1]);
+            }
+        } else {
+            PrintService.printString(strArray[i]);
+        }
+    }
+    PrintService.printLineFeed(2);
+    PrintService.CloseSerialPort();
+}

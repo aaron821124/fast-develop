@@ -332,6 +332,21 @@ h3 {
     color: inherit !important;
 }
 
+.circle-btn {
+    width: 80px !important;
+    height: 80px !important;
+    border-radius: 50%;
+    border: solid 2px #4BDAB6;
+    padding: 0;
+    min-width: 0px;
+    margin: 0 14px;
+    color: #847E7E !important;
+    padding: 6px !important;
+    box-shadow: none !important;
+    background: linear-gradient(#6EBBC3, #F7FFE5);
+
+}
+
 .btn-highlight {
     /*color: #E7E7E7 !important;*/
     color: #ffffff !important;

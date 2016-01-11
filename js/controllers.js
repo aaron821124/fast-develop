@@ -347,13 +347,24 @@ angular.module('app')
         }
 
 
-        var interval = $interval(function() {
-            if ($scope.countDown == 0) {
-                $scope.home();
-                $interval.cancel(interval);
-            }
-            $scope.countDown--;
-        }, 1000)
+        // var interval = $interval(function() {
+        //     if ($scope.countDown == 0) {
+        //         $scope.home();
+        //         $interval.cancel(interval);
+        //     }
+        //     $scope.countDown--;
+        // }, 1000)
+
+        $scope.data = ['姓名：' + $scope.patient.patientInfo.Name, 
+        '就診醫師：陳俊杉', 
+        '就診科別：一般外科',
+        '預估看診時間：15:30',
+        '就診號碼：14',
+        '就診診間：2樓 H區 第三診'];
+
+        $scope.print = function(){
+            Print(data);
+        }
 
         $scope.$on('$stateChangeStart',
             function(event, toState, toParams, fromState, fromParams) {
