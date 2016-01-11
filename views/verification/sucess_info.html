@@ -4,15 +4,24 @@
             <h3 ng-show="countDown <= 15" style="margin-top: 30px; width:100%">如不動作，系統將於<purple>{{countDown}}</purple>秒後自動登出</h3>
         </div>
         <span flex></span>
-        <!-- <h1 style="margin-top: 30px; font-size: 28px"><purple>{{patient.patientInfo.Name}}</purple> 您好～ 今天是要看 一般外科 醫師為：陳俊杉 醫師</h1>
-        <h1 class="line-height">
-            掛號號碼：<purple>14</purple><br/>
-            位址：<purple>2樓 H區 第三診</purple>(詳細請點診間位置)<br/>
+        <h1 style="margin-top: 30px; font-size: 28px;width:100%"><purple>{{patient.patientInfo.Name}}</purple> 您好！ 今天是要去 一般外科，
+        看診醫師是<purple>陳俊杉</purple> 醫師。</h1>
+        <h1 class="line-height" style="width:100%;text-align: left;">
+            就診號碼：<purple>14</purple><br/>
             目前看診號碼：<purple>5</purple><br/>
-            預計看診時間：<purple>15:05</purple>
+            預計看診時間：<purple>15:05</purple><br/>
+            看診位址：<purple>2樓 H區 第三診</purple>(詳細請點診間位置)<br/>
         </h1>
-        <span flex></span> -->
-        <h1 layout="row" style="width: 100%">
+        <div style="width: 100%" layout="row">
+            <span flex></span>
+            <md-button class="md-fab circle-btn" ng-click="print()">列印</md-button>
+            <md-button class="md-fab circle-btn" ng-click="home()">離開</md-button>
+        </div>
+        <span flex></span>
+
+
+
+        <!-- <h1 layout="row" style="width: 100%">
             <span flex>姓名：{{patient.patientInfo.Name}}</span><span flex>就診醫師：陳俊杉</span>
         </h1>
         <h1 layout="row" style="width: 100%">
@@ -29,6 +38,6 @@
             <md-button class="md-fab circle-btn" ng-click="print()">列印</md-button>
             <md-button class="md-fab circle-btn" ng-click="home()">離開</md-button>
         </div>
-        <div flex></div>
+        <div flex></div> -->
     </div>
 </div>

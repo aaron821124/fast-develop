@@ -1,18 +1,27 @@
 <div ng-controller="checkCtrl" id="container" layout="column" layout-align="center center">
-    <span flex="10"></span>
-    <h1 class="line-height">
-		您是：<purple id="patient">{{patient.patientInfo.Name}}</purple><br/>
-		<!-- 掛號號碼：<purple>14</purple><br/> -->
-		就診醫師：<purple>陳俊杉 醫師</purple><br/>
-		科別：<purple>一般外科</purple>
-	</h1>
-    <div layout="column" layout-align="center center">
-        <h1>是否確認報到？</h1>
-        <div layout="row">
-            <md-button ng-click="next()" style="width: 200px;height: 84px;">
-                <h1>確認報到</h1></md-button>
-            <md-button ng-click="" style="width: 200px;height: 84px;">
-                <h1>資料錯誤</h1></md-button>
+    <div ng-if="!fail">
+        <span flex="10"></span>
+        <h1 class="line-height">
+                您是：<purple id="patient">{{patient.patientInfo.Name}}</purple><br/>
+                <!-- 掛號號碼：<purple>14</purple><br/> -->
+                就診醫師：<purple>陳俊杉 醫師</purple><br/>
+                科別：<purple>一般外科</purple>
+            </h1>
+        <div layout="column" layout-align="center center">
+            <h1>是否確認報到？</h1>
+            <div layout="row">
+                <md-button ng-click="next()" style="width: 200px;height: 84px;">
+                    <h1>確認報到</h1></md-button>
+                <md-button ng-click="failClick()" style="width: 200px;height: 84px;">
+                    <h1>資料錯誤</h1></md-button>
+            </div>
         </div>
+    </div>
+    <div class="fade" ng-if="fail" layout="column" style="height: 100%;" ng-controller="infoCtrl">
+        <div style="width: 100%; height: 26.667px;position: absolute;margin-left: -150px">
+            <h3 ng-show="countDown <= 15" style="width:100%; margin:0;">如不動作，系統將於<purple>{{countDown}}</purple>秒後自動登出</h3>
+        </div>
+        <h1 style="position: relative;margin-top: 40px;">麻煩請前往櫃檯確認報到資料</h1>
+        <img ng-class="{'full-screen': full}" ng-click="toggleMap()" style="background-color: white;" src="img/volunmap.png">
     </div>
 </div>

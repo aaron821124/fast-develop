@@ -323,6 +323,12 @@ angular.module('app')
             $scope.$parent.$parent.step = 4;
             $state.go('verification.sucess')
         }
+
+        $scope.fail = false;
+
+        $scope.failClick = function(){
+            $scope.fail = true;
+        }
     })
     .controller('successCtrl', function($scope, $timeout, $state) {
         $scope.$parent.$parent.step = 4;
